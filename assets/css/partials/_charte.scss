@@ -1,0 +1,112 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* You can add global styles to this file, and also import other style files */
+$principale: 'prompt', helvetica;
+$principaleLight: 'promptLight', helvetica;
+$secondary: 'inconsolata', courrier new;
+$article: 'marvel', trebuchet;
+$font-bold: 700;
+
+$colorBlack: #000;
+$colorWhite: #fff;
+$colorGraySergent: #444;
+$colorGrayCredential: #606060;
+$colorGrayActu: #e6e6e6;
+$colorGrayAdress: #c0c0c0;
+$colorBlueMember: #3d8af7;
+
+// Les chemins sont en erreur dans ce fichier mais sont corrects dans le fichier de sortie css
+@font-face {
+  font-family: 'prompt';
+  src: url('../../polices/Prompt/Prompt-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'promptLight';
+  src: url('../../polices/Prompt/Prompt-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'inconsolata';
+  src: url('../../polices/Inconsolata/Inconsolata-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'marvel';
+  src: url('../../polices/Marvel/Marvel-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font-family: $principale;
+  //color: $colorBlack;
+  font-weight: bolder;
+  font-size: 3.2rem;
+}
+
+h2 {
+  font-family: $principaleLight;
+  colour: $colorWhite;
+  font-size: 2.5rem;
+}
+
+h3 {
+  @extend h2;
+  font-size: 2rem;
+}
+
+h4, h5, h6 {
+  @extend h2;
+  font-size: 1.8rem;
+}
+
+h5 {
+  @extend h2;
+  font-size: 1.6rem;
+}
+
+h6 {
+  color: $colorGrayCredential;
+  font-size: 1.4rem;
+  font-style: italic;
+}
+
+p {
+  font-family: $article;
+  font-size: 2.8vh;
+  color: $colorGraySergent;
+}
+
+a:hover {
+}
+
+li {
+  // On retire l'espacement gauche de toutes les listes ainsi que les puces
+  margin-left: 0;
+  list-style-type: none;
+}
+
+@media (max-width: 575.98px) {
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  a {
+    font-size: 0.9rem;
+  }
+
+  p {
+    font-family: $article;
+    font-size: 0.9rem;
+  }
+}
+
+

@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block nav %}
+    {% include 'layout/nav.html.twig' %}
+{% endblock %}
+
+{% block body %}
+
+    <img src="{{ asset('build/pik/bp/armada-rouen-2019-nhpb-cornemuserouen.jpg') }}" class="background--page" alt="...">
+    <div class="container-fluid section--box">
+        <div class="row">
+            <!--
+            <div class="col-lg-2 col-md-2">
+
+            </div>
+            -->
+            <div class="col-lg-12 col-md-12 col-sm-12 xs-12">
+                <div class="card text-dark p-5">
+                    <h3 class="pt-5 card-title">L'école de musique</h3>
+
+                    <h5>Apprendre la cornemuse, le snare drum, le tom</h5>
+
+                    <p>
+                        VOUS RÊVEZ DE REJOINDRE LE Normandy Highland Pipe Band ! Vous souhaitez apprendre la cornemuse ou les percussions
+                        (Snare ou Tom ténor) avec la méthode traditionnelle écossaise ?
+                        C'est donc le moment de commencer votre apprentissage en suivant l'un de nos cours. Venez comme vous êtes...
+                        un practice à acheter sur place avant votre 1ère leçon et le livret d'apprentissage vous est remis.
+                    </p>
+                    <p>
+                        C'est donc le moment de commencer votre apprentissage en suivant l'un de nos cours. Venez comme vous êtes...
+                        un practice à acheter sur place avant votre 1ère leçon et le livret d'apprentissage vous est remis.
+                    </p>
+                    <p>
+                        Les cours se déroulent chaque jeudi, hors vacances scolaires, de 18h30 à la MJC Saint Sever,
+                        place de Hanovre, rive gauche à Rouen.
+                    </p>
+                    <a href="mailto:pipebandnhpb@gmail.com">
+                        <p>Contact</p>
+                    </a>
+                </div>
+            </div>
+            <!--
+            <div class="col-lg-3">
+
+            </div>
+            -->
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include 'layout/footer.html.twig' %}
+{% endblock %}
