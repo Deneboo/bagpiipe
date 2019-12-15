@@ -3,10 +3,17 @@
 {% block title %}New Adress{% endblock %}
 
 {% block body %}
-    <h1>Create new Adress</h1>
+    <div class="container-fluid section--box">
+        <div class="row">
 
-    {{ include('admin/adress/_form.html.twig') }}
+            <div class="col-lg-12 col-md-12 col-sm-12 xs-12">
+                <div class="card text-dark p-5">
+                    <h1 class="pt-5 card-title">Nouvelle adresse</h1>
+                    {{ include('admin/adress/_form.html.twig') }}
+                    <a href="{{ path('adress_index') }}">back to list</a>
+                    <a href="{{ path('event_new') }}">Create new</a></div>
+            </div>
 
-    <a href="{{ path('adress_index') }}">back to list</a>
-    <a href="{{ path('event_new') }}">Create new</a>
+        </div>
+    </div>
 {% endblock %}

@@ -48,39 +48,39 @@ h1 {
   font-family: $principale;
   //color: $colorBlack;
   font-weight: bolder;
-  font-size: 3.2rem;
+  font-size: 4.9vh;
 }
 
 h2 {
   font-family: $principaleLight;
   colour: $colorWhite;
-  font-size: 2.5rem;
+  font-size: 4.2vh;
 }
 
 h3 {
   @extend h2;
-  font-size: 2rem;
+  font-size: 3.8vh;
 }
 
 h4, h5, h6 {
   @extend h2;
-  font-size: 1.8rem;
+  font-size: 3.4vh;
 }
 
 h5 {
   @extend h2;
-  font-size: 1.6rem;
+  font-size: 3vh;
 }
 
 h6 {
   color: $colorGrayCredential;
-  font-size: 1.4rem;
+  font-size: 2.8vh;
   font-style: italic;
 }
 
 p {
   font-family: $article;
-  font-size: 2.8vh;
+  font-size: 2.5vh;
   color: $colorGraySergent;
 }
 
@@ -95,18 +95,6 @@ li {
 
 @media (max-width: 575.98px) {
 
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  a {
-    font-size: 0.9rem;
-  }
-
-  p {
-    font-family: $article;
-    font-size: 0.9rem;
-  }
 }
 
 

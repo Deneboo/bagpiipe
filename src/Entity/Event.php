@@ -29,7 +29,7 @@ class Event
     private $event_subtitle;
 
     /**
-     * @ORM\Column(type="string", length=5000)
+     * @ORM\Column(type="text")
      */
     private $event_description;
 
@@ -49,7 +49,7 @@ class Event
     private $event_story;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Adress", mappedBy="events")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Adress", inversedBy="events")
      */
     private $adresses;
 

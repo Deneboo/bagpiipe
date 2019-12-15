@@ -39,7 +39,7 @@ class Adress
     private $city;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Event", inversedBy="adresses")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Event", mappedBy="adresses")
      */
     private $events;
 

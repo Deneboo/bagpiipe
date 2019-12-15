@@ -1,4 +1,13 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
+<div class="row">
+    <div class="col-md-3">{{ form_row(form.adress_street_number) }}</div>
+    <div class="col-md-9">{{ form_row(form.adress_street_name) }}</div>
+</div>
+<div class="row">
+    <div class="col-md-9">{{ form_row(form.adress_information) }}</div>
+    <div class="col-md-3">{{ form_row(form.city) }}</div>
+</div>
+
     <button class="btn" >{{ button_label|default('Save') }}</button>
+<a class="btn btn-primary" href="{{ path('event_index') }}">Retour à la liste</a>
 {{ form_end(form) }}

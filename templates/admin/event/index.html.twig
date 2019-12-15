@@ -3,47 +3,51 @@
 {% block title %}Event index{% endblock %}
 
 {% block body %}
-<div class="container-fluid section--box">
-    <div class="row">
-    <h1>Event index</h1>
+    <div class="container-fluid section--box">
+        <div class="row">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Event_title</th>
-                <th>Event_subtitle</th>
-                <th>Event_description</th>
-                <th>Event_date_start</th>
-                <th>Event_date_end</th>
-                <th>Event_story</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for event in events %}
-            <tr>
-                <td>{{ event.id }}</td>
-                <td>{{ event.eventTitle }}</td>
-                <td>{{ event.eventSubtitle }}</td>
-                <td>{{ event.eventDescription }}</td>
-                <td>{{ event.eventDateStart ? event.eventDateStart|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ event.eventDateEnd ? event.eventDateEnd|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ event.eventStory }}</td>
-                <td>
-                    <a href="{{ path('event_show', {'id': event.id}) }}">show</a>
-                    <a href="{{ path('event_edit', {'id': event.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            <div class="col-lg-12 col-md-12 col-sm-12 xs-12">
+                <div class="card text-dark p-5">
+                    <h1 class="pt-5 card-title">Liste des évènements</h1>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Date de début</th>
+                            <th>Date de fin</th>
+                            <th>Ville</th>
+                            <th>actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for event in events %}
+                            <tr>
+                                <td>{{ event.eventTitle }}</td>
+                                <td>{{ event.eventDateStart ? event.eventDateStart|date('d-m-Y') : '' }}</td>
+                                <td>{{ event.eventDateEnd ? event.eventDateEnd|date('d-m-Y') : '' }}</td>
+                                <td>
+                                    {% if not event.adresses.empty %}
+                                        {% for Adress in event.adresses %}
+                                            {{ Adress.city.CityName }}
+                                        {% endfor %}
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <a class="btn btn-info" href="{{ path('event_show', {'id': event.id}) }}">Détails</a>
+                                    <a class="btn btn-warning" href="{{ path('event_edit', {'id': event.id}) }}">Modifier</a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="8">no records found</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <a href="{{ path('event_new') }}">Create new</a>
+                </div>
+            </div>
 
-    <a href="{{ path('event_new') }}">Create new</a>
+        </div>
     </div>
-</div>
 {% endblock %}

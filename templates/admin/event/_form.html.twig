@@ -1,5 +1,24 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-<a href="{{ path('adress_new') }}">Créer une adresse</a>
-    <button class="btn">{{ button_label|default('Save') }}</button>
+<div class="row">
+    <div class="col-md-6">{{ form_row(form.event_title) }}</div>
+    <div class="col-md-6">{{ form_row(form.event_subtitle) }}</div>
+</div>
+<div class="row">
+    <div class="col-md-12">{{ form_row(form.event_description) }}</div>
+</div>
+<div class="row">
+    <div class="col-md-6">{{ form_row(form.event_date_start) }}</div>
+    <div class="col-md-6">{{ form_row(form.event_date_end) }}</div>
+</div>
+<div class="row">
+    <div class="col-md-12">{{ form_row(form.event_story) }}</div>
+</div>
+<div class="row">
+    <div class="col-md-6">{{ form_row(form.adresses) }}</div>
+    <div class="col-md-6 pt-5"><a href="{{ path('adress_new') }}" class="btn btn-info">Créer une adresse</a></div>
+</div>
+<div class="row">
+    <button class="col-md-2 ml-2 mr-2 btn btn-success">{{ button_label|default('Enregistrer') }}</button>
+    <a class="col-md-2 ml-2 mr-2 btn btn-primary" href="{{ path('event_index') }}">Retour à la liste</a>
+</div>
 {{ form_end(form) }}

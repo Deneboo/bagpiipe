@@ -3,10 +3,17 @@
 {% block title %}New Event{% endblock %}
 
 {% block body %}
-    <h1>Create new Event</h1>
 
-    {{ include('admin/event/_form.html.twig') }}
+    <div class="container-fluid section--box">
+        <div class="row">
 
+            <div class="col-lg-12 col-md-12 col-sm-12 xs-12">
+                <div class="card text-dark p-5">
+                    <h1 class="pt-5 card-title">Créer un évènement</h1>
+                    {{ include('admin/event/_form.html.twig') }}
+                </div>
+            </div>
 
-    <a href="{{ path('event_index') }}">back to list</a>
+        </div>
+    </div>
 {% endblock %}
