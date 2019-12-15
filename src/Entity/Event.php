@@ -49,7 +49,7 @@ class Event
     private $event_story;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Adress", inversedBy="events")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Adress", mappedBy="events")
      */
     private $adresses;
 

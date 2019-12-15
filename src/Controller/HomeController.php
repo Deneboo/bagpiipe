@@ -70,7 +70,6 @@ class HomeController
         // Initialisation de l'objet twig
         $content = $twig->render('pages/hireus.html.twig');
         return new Response($content);
-
     }
 
     /**

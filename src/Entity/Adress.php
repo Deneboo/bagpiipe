@@ -39,7 +39,7 @@ class Adress
     private $city;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Event", mappedBy="adresses")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Event", inversedBy="adresses")
      */
     private $events;
 
@@ -58,6 +58,10 @@ class Adress
         return $this->adress_street_number;
     }
 
+    /**
+     * @param string|null $adress_street_number
+     * @return $this
+     */
     public function setAdressStreetNumber(?string $adress_street_number): self
     {
         $this->adress_street_number = $adress_street_number;

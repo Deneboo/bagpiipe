@@ -3,6 +3,8 @@
 {% block title %}Event index{% endblock %}
 
 {% block body %}
+<div class="container-fluid section--box">
+    <div class="row">
     <h1>Event index</h1>
 
     <table class="table">
@@ -42,4 +44,6 @@
     </table>
 
     <a href="{{ path('event_new') }}">Create new</a>
+    </div>
+</div>
 {% endblock %}

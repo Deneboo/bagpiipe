@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Event;
 use App\Form\EventType;
+use App\Form\AdressType;
 use App\Repository\EventRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,7 +23,7 @@ class AdminEventController extends AbstractController
      */
     public function index(EventRepository $eventRepository): Response
     {
-        return $this->render('event/index.html.twig', [
+        return $this->render('admin/event/index.html.twig', [
             'events' => $eventRepository->findAll(),
         ]);
     }
@@ -46,7 +47,7 @@ class AdminEventController extends AbstractController
             return $this->redirectToRoute('event_index');
         }
 
-        return $this->render('event/new.html.twig', [
+        return $this->render('admin/event/new.html.twig', [
             'event' => $event,
             'form' => $form->createView(),
         ]);
@@ -59,7 +60,7 @@ class AdminEventController extends AbstractController
      */
     public function show(Event $event): Response
     {
-        return $this->render('event/show.html.twig', [
+        return $this->render('admin/event/show.html.twig', [
             'event' => $event,
         ]);
     }
@@ -81,7 +82,7 @@ class AdminEventController extends AbstractController
             return $this->redirectToRoute('event_index');
         }
 
-        return $this->render('event/edit.html.twig', [
+        return $this->render('admin/event/edit.html.twig', [
             'event' => $event,
             'form' => $form->createView(),
         ]);
@@ -89,9 +90,6 @@ class AdminEventController extends AbstractController
 
     /**
      * @Route("/{id}", name="event_delete", methods={"DELETE"})
-     * @param Request $request
-     * @param Event $event
-     * @return Response
      */
     public function delete(Request $request, Event $event): Response
     {
@@ -102,5 +100,19 @@ class AdminEventController extends AbstractController
         }
 
         return $this->redirectToRoute('event_index');
+    }
+
+    // Partie Front
+
+    /**
+     * @Route("/pages/actu/", name="list_news", methods={"GET"})
+     * @param EventRepository $eventRepository
+     * @return Response
+     */
+    public function listNews(EventRepository $eventRepository)
+    {
+        return $this->render('pages/event/news.html.twig', [
+            'events' => $eventRepository->findAll()
+        ]);
     }
 }
