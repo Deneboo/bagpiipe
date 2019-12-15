@@ -27,7 +27,7 @@ class City
     private $city_postcode;
 
     /**
-     * @ORM\Column(type="string", length=55, nullable=true)
+     * @ORM\Column(type="string", length=55)
      */
     private $city_country;
 
@@ -65,7 +65,7 @@ class City
         return $this->city_country;
     }
 
-    public function setCityCountry(?string $city_country): self
+    public function setCityCountry(string $city_country): self
     {
         $this->city_country = $city_country;
 

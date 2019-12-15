@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20191215052624 extends AbstractMigration
+final class Version20191215082323 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -24,7 +24,6 @@ final class Version20191215052624 extends AbstractMigration
 
         $this->addSql('CREATE TABLE adress (id INT AUTO_INCREMENT NOT NULL, adress_street_number VARCHAR(16) DEFAULT NULL, adress_street_name VARCHAR(55) NOT NULL, adress_information VARCHAR(55) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE city (id INT AUTO_INCREMENT NOT NULL, city_name VARCHAR(55) NOT NULL, city_postcode VARCHAR(10) DEFAULT NULL, city_country VARCHAR(55) DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-        $this->addSql('CREATE TABLE event (id INT AUTO_INCREMENT NOT NULL, event_title VARCHAR(55) NOT NULL, event_subtitle VARCHAR(255) DEFAULT NULL, event_description LONGTEXT NOT NULL, event_date_start DATETIME NOT NULL, event_date_end DATETIME DEFAULT NULL, event_story LONGTEXT DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
     }
 
     public function down(Schema $schema) : void
@@ -34,6 +33,5 @@ final class Version20191215052624 extends AbstractMigration
 
         $this->addSql('DROP TABLE adress');
         $this->addSql('DROP TABLE city');
-        $this->addSql('DROP TABLE event');
     }
 }

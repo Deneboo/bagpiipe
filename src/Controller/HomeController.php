@@ -58,17 +58,33 @@ class HomeController
     }
 
     /**
-     * @Route("/prestation", name="hireus")
+ * @Route("/prestation", name="hireus")
+ * @param Environment $twig
+ * @return Response
+ * @throws \Twig\Error\LoaderError
+ * @throws \Twig\Error\RuntimeError
+ * @throws \Twig\Error\SyntaxError
+ */
+    public function hireus(Environment $twig)
+    {
+        // Initialisation de l'objet twig
+        $content = $twig->render('pages/hireus.html.twig');
+        return new Response($content);
+
+    }
+
+    /**
+     * @Route("/test", name="test")
      * @param Environment $twig
      * @return Response
      * @throws \Twig\Error\LoaderError
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    public function hireus(Environment $twig)
+    public function test(Environment $twig)
     {
         // Initialisation de l'objet twig
-        $content = $twig->render('pages/hireus.html.twig');
+        $content = $twig->render('pages/test.html.twig');
         return new Response($content);
 
     }

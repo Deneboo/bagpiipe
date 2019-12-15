@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -27,7 +29,7 @@ class Event
     private $event_subtitle;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string", length=5000)
      */
     private $event_description;
 
@@ -45,6 +47,16 @@ class Event
      * @ORM\Column(type="text", nullable=true)
      */
     private $event_story;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Adress", inversedBy="events")
+     */
+    private $adresses;
+
+    public function __construct()
+    {
+        $this->adresses = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -119,6 +131,32 @@ class Event
     public function setEventStory(?string $event_story): self
     {
         $this->event_story = $event_story;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Adress[]
+     */
+    public function getAdresses(): Collection
+    {
+        return $this->adresses;
+    }
+
+    public function addAdress(Adress $adress): self
+    {
+        if (!$this->adresses->contains($adress)) {
+            $this->adresses[] = $adress;
+        }
+
+        return $this;
+    }
+
+    public function removeAdress(Adress $adress): self
+    {
+        if ($this->adresses->contains($adress)) {
+            $this->adresses->removeElement($adress);
+        }
 
         return $this;
     }
