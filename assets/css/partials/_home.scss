@@ -16,12 +16,12 @@
 
   img {
     width: 11vw;
-    padding-top: 0.7rem;
+  }
+
+  .logo {
     border-right: 1px solid $colorGraySergent;
-    box-shadow: #1d2124;
   }
 }
-
 
 @media (max-width: 1200px) {
   .logo {

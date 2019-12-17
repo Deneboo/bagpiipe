@@ -5,9 +5,14 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Exception;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EventRepository")
+ * @Vich\Uploadable()
  */
 class Event
 {
@@ -17,6 +22,18 @@ class Event
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @var string|null
+     * @ORM\Column(type="string", length=255)
+     */
+    private $filename;
+
+    /**
+     * @var File|null
+     * @Vich\UploadableField(mapping="event_image", fileNameProperty="filename")
+     */
+    private $imageFile;
 
     /**
      * @ORM\Column(type="string", length=55)
@@ -52,6 +69,11 @@ class Event
      * @ORM\ManyToMany(targetEntity="App\Entity\Adress", inversedBy="events")
      */
     private $adresses;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updated_at;
 
     public function __construct()
     {
@@ -157,6 +179,58 @@ class Event
         if ($this->adresses->contains($adress)) {
             $this->adresses->removeElement($adress);
         }
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getFilename(): ?string
+    {
+        return $this->filename;
+    }
+
+    /**
+     * @param string|null $filename
+     * @return Event
+     */
+    public function setFilename(?string $filename): Event
+    {
+        $this->filename = $filename;
+        return $this;
+    }
+
+    /**
+     * @return File|null
+     */
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    /**
+     * @param File|null $imageFile
+     * @return Event
+     * @throws Exception
+     */
+    public function setImageFile(?File $imageFile): Event
+    {
+        $this->imageFile = $imageFile;
+        if ($this->imageFile instanceof UploadedFile) {
+            $this->updated_at = new \DateTime('now');
+        }
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updated_at): self
+    {
+        $this->updated_at = $updated_at;
 
         return $this;
     }

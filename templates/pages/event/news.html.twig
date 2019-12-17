@@ -9,26 +9,56 @@
     <img src="{{ asset('build/pik/bp/armada-rouen-2019-nhpb-cornemuserouen.jpg') }}" class="background--page" alt="...">
     <div class="container-fluid section--box">
         <div class="row">
-            <!--
+
             <div class="col-lg-2 col-md-2">
+                <div class="subnav">
 
-            </div>
-            -->
-            <div class="col-lg-12 col-md-12 col-sm-12 xs-12">
-                <div class="card text-dark p-5">
-                    <h3 class="pt-5 card-title">Les actualités du pipe Band</h3>
-
-                    {% for event in events %}
-                        <h5>{{ event.eventTitle }}</h5>
-                    {% endfor %}
+                                <ul class="subnav--main">
+                                    <li><a href="Accueil"><img class="logo" src="../../assets/images/logo.png" /></a></li>
+                                    <li><a href="nhpb">Le NHPB</a></li>
+                                    <li><a href="pipeband">Pipe Band ?</a></li>
+                                    <li><a href="membres">Les Membres</a></li>
+                                    <li><a href="instruments">Les Instruments</a></li>
+                                    <li><a href="repertoire">Le répertoire</a></li>
+                                    <li><a href="uniforme">L'uniforme</a></li>
+                                </ul>
 
                 </div>
             </div>
-            <!--
+
+
+            <div class="col-lg-7 col-md-10 col-sm-12 xs-12">
+                <div class="card text-dark p-5">
+                    <h1 class="pt-5 card-title">Les actualités du pipe Band</h1>
+                {% for event in events %}
+                <div class="event-container">
+                    <h3 class="event-title">{{ event.eventTitle }}</h3>
+                    <h5>{{ event.eventSubtitle }}</h5>
+                    <div class="event-pik">
+                        <img src="{{ vich_uploader_asset(event, 'imageFile') }}">
+                    </div>
+                    <div class="event-date">
+                        <p>{% if not event.adresses.empty %}
+                                {% for Adress in event.adresses %}
+                                    {{ Adress.city.CityName }}
+                                {% endfor %}
+                            {% endif %}, le
+                            {{ event.eventDateStart ? event.eventDateStart|date('d/m/Y') : '' }}.
+                        </p>
+                    </div>
+                    <div class="event-article">
+                        <p>{{ event.eventDescription }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+                </div>
+            </div>
+
+
             <div class="col-lg-3">
 
             </div>
-            -->
+
         </div>
     </div>
 {% endblock %}

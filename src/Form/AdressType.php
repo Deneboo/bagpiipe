@@ -5,8 +5,10 @@ namespace App\Form;
 use App\Entity\Adress;
 use App\Entity\Event;
 use App\Entity\City;
+use App\Form\CityType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -18,11 +20,7 @@ class AdressType extends AbstractType
             ->add('adress_street_number')
             ->add('adress_street_name')
             ->add('adress_information')
-            ->add('city', EntityType::class, [
-                'class' => City::class,
-                'choice_label' => 'city_name',
-                'multiple' => false
-            ]);
+            ->add('city', CityType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)

@@ -3,11 +3,19 @@
 {% block title %}Edit Adress{% endblock %}
 
 {% block body %}
-    <h1>Edit Adress</h1>
+<div class="container-fluid section--box">
+    <div class="row">
 
-    {{ include('admin/adress/_form.html.twig', {'button_label': 'Update'}) }}
+        <div class="col-lg-12 col-md-12 col-sm-12 xs-12">
+            <div class="card text-dark p-5">
+                <h1 class="pt-5 card-title">Modifier l' dresse</h1>
 
-    <a href="{{ path('adress_index') }}">back to list</a>
+    {{ include('admin/adress/_form.html.twig', {'button_label': 'Modifier'}) }}
 
     {{ include('admin/adress/_delete_form.html.twig') }}
+            </div>
+        </div>
+
+    </div>
+</div>
 {% endblock %}

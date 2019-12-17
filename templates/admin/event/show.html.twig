@@ -7,10 +7,9 @@
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ event.id }}</td>
-            </tr>
+            {% if event.filename %}
+                <img src="{{ vich_uploader_asset(event, 'imageFile') }}" style="width: 15vw; height: auto;">
+            {% endif %}
             <tr>
                 <th>Event_title</th>
                 <td>{{ event.eventTitle }}</td>
