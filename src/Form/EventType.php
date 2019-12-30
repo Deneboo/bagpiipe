@@ -60,14 +60,13 @@ class EventType extends AbstractType
             ])
             // ->add('city', CityType::class);
 
-            /* Type qui fonctionne avec choix d'adresse
              ->add('adresses', EntityType::class, [
                 'label' => 'Adresse :',
                 'class' => Adress::class,
                 'choice_label' => 'adress_street_name',
                 'multiple' => true,
                 'help' => 'Sélectionner l\'adresse.',
-            ])*/
+            ])
         ;
     }
 

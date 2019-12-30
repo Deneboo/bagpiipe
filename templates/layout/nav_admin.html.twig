@@ -1,0 +1,28 @@
+<nav class="navbar fixed-top navbar-expand-lg justify-content-lg-center">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerNav" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse ml-lg-5" id="navbarTogglerNav">
+        <a class="navbar-brand" href="">NHPB</a>
+        <ul class="navbar-nav mr-auto ml-5 mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link ml-lg-5" href="{{ path('admin') }}">Accueil</a>
+            </li>
+            <li class="nav-item ml-lg-5 pl-lg-2">
+                <a class="nav-link" href="{{ path('event_index') }}">Les évènements</a>
+            </li>
+            <li class="nav-item ml-lg-5 pl-lg-2">
+                <a class="nav-link" href="" tabindex="-1" aria-disabled="true">Les membres</a>
+            </li>
+            <li class="nav-item ml-lg-5 pl-lg-2">
+                <a class="nav-link" href="{{ path('home') }}" tabindex="-1" aria-disabled="true">Retour au site</a>
+            </li>
+        </ul>
+        <!-- research zone found of the Bootstrap code
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        -->
+    </div>
+</nav>

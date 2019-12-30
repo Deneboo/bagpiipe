@@ -13,8 +13,10 @@ class CityType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('city_name')
-            ->add('city_postcode')
+            ->add('city_name', null,
+                ['label' => 'Nom de la ville :'])
+            ->add('city_postcode', null,
+                ['label' => 'Code postal :'])
             ->add('city_country', CountryType::class, array(
                 'label' => 'Pays :',
                 'preferred_choices' => array('FR'),

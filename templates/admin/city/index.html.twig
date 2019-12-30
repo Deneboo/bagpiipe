@@ -1,24 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}City index{% endblock %}
+{% block nav %}
+    {% include 'layout/nav_admin.html.twig' %}
+{% endblock %}
 
 {% block body %}
-    <h1>City index</h1>
+    <div class="container-fluid section--box">
+        <div class="row">
 
+            <div class="col-lg-12 col-md-12 col-sm-12 xs-12">
+                <div class="card text-dark p-5">
+                    <h1 class="pt-5 card-title">Liste des Villes</h1>
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>City_name</th>
-                <th>City_postcode</th>
-                <th>City_country</th>
+                <th>Nom de la ville</th>
+                <th>Code postal</th>
+                <th>Pays</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for city in cities %}
             <tr>
-                <td>{{ city.id }}</td>
                 <td>{{ city.cityName }}</td>
                 <td>{{ city.cityPostcode }}</td>
                 <td>{{ city.cityCountry }}</td>
@@ -35,5 +39,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('city_new') }}">Create new</a>
+    <a  class="btn btn-primary" href="{{ path('city_new') }}">Create new</a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

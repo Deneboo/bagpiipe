@@ -1,6 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Adress{% endblock %}
+{% block nav %}
+    {% include 'layout/nav_admin.html.twig' %}
+{% endblock %}
 
 {% block body %}
     <h1>Adress</h1>
@@ -31,4 +33,9 @@
     <a href="{{ path('adress_edit', {'id': adress.id}) }}">edit</a>
 
     {{ include('admin/adress/_delete_form.html.twig') }}
+            </div>
+        </div>
+
+    </div>
+</div>
 {% endblock %}
