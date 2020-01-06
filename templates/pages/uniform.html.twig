@@ -1,0 +1,115 @@
+{% extends 'base.html.twig' %}
+
+{% block nav %}
+    {% include 'layout/nav.html.twig' %}
+{% endblock %}
+
+{% block body %}
+
+    <!--
+    <img src="{{ asset('build/pik/bp/armada-rouen-2019-nhpb-cornemuserouen.jpg') }}" class="background--page" alt="...">
+    -->
+
+    <div class="container-fluid section--box">
+        <div class="row">
+
+            <div class="col-lg-3 col-md-3">
+                <div class="subnav">
+                    <div class="subnav--sergent">
+                        <div class="subnav--tri"><img class="px" src="/build/pik/1px.png" /></div>
+                        <div class="subnav--rond">
+                            <div class="medaille--rond">
+                                <div class="adress">
+                                    <p class="NHPB K1">Normandy Highland Pipe Band</p>
+                                    <p class="NHPB K2">NHPB</p>
+                                    <p class="adress--a">MJC Rive gauche</p>
+                                    <p class="adress--a">Place de Hanovre</p>
+                                    <p class="">76100 Rouen</p>
+                                    <p>Tél : 06 08 63 53 60</p>
+                                    <a href="mailto:pipebandnhpb@gmail.com">
+                                        <p>pipebandnhpb@gmail.com</p>
+                                    </a>
+                                </div>
+                                <ul class="subnav--main">
+                                    <!-- <li><a href="nhpb">Le NHPB</a></li> -->
+                                    <li><a href="{{ path('pipeband') }}">Pipe Band ?</a></li>
+                                    <li><a href="{{ path('musicien') }}">Les Membres</a></li>
+                                    <li><a href="{{ path('instruments') }}">Les Instruments</a></li>
+                                    <li><a href="{{ path('music') }}">Le répertoire</a></li>
+                                    <li><a class="active--link" href="{{ path('uniform') }}">L'uniforme</a></li>
+                                    <li><a href="Accueil"><img class="logo" src="/build/pik/logo-square.png" /></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-6 col-md-10 col-sm-12 xs-12">
+                <div class="card event--card p-5">
+                    <h1 class="pt-5 card-title">L'uniforme</h1>
+                    <p>En fonction de l'évenement, nos musiciens revêtent différentes tenues.
+                        LE NHPB dispose de trois tenues officielles : La Full Dress, la tenue millitaire et la tenue civile
+                    </p>
+                    <p>
+                        Les Pipers et les Drummers ont des kilts de couleurs différentes : Tartan Black Watch pour les
+                        percussionistes et Royal Stewart pour les Sonneurs.
+                    </p>
+
+                    <div class="event-container">
+                        <h3 class="event-title">La full dress</h3>
+                        <div class="article-pik">
+                            <img src="/build/pik/uniform/black-watch-fulldress-nhpb-cornemuserouen.jpg"
+                                 alt="piper full dress uniforme black watch">
+                        </div>
+                        <p>
+                            En fonction du pupitre d'appartenance du musicien, la composition de la full dress sera différente.
+                        </p>
+                        <p>
+                            Pour un joueur de cornemuse, on a un Kilt, un pourpoint, une cape de sonneur,
+                            un sporran à longs crins, une ceinture pour sporran, une ceinture en cuir portée en écharpe (comme une
+                            Miss), une ceinture à la taille avec une grosse boucle en métal, des chaussettes, des guêtres,
+                            des godillots et un couvre chef.
+                        </p>
+                        <p>
+                            Un percussionniste va avoir le même uniforme sans la cape, qui gênerait son harnachement.
+                        </p>
+                    </div>
+                    <div class="event-container">
+                        <h3 class="event-title">La tenue militaire</h3>
+                        <div class="article-pik">
+                            <img src="/build/pik/uniform/black-watch-tenue-militaire-1-nhpb-cornemuserouen.jpg"
+                                 alt="pipe band nhpb en tenue militaire">
+                        </div>
+                    </div>
+                    <div class="event-container">
+                        <h3 class="event-title">La tenue civile</h3>
+                        <div class="article-pik">
+                            <img src="/build/pik/uniform/black-watch-tenue-civile-nhpb-cornemuserouen.jpg"
+                                 alt="pipe band nhpb en tenue civile">
+                        </div>
+                    </div>
+                    <div class="event-container">
+                        <h3 class="event-title">La tenue spéciale météo normande</h3>
+                        <div class="article-pik">
+                            <img src="/build/pik/uniform/black-watch-raincape-nhpb-cornemuserouen.jpg"
+                                 alt="pipe band pluie rain cape">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="gallery">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include 'layout/footer.html.twig' %}
+{% endblock %}

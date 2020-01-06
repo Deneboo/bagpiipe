@@ -29,11 +29,11 @@
                                 </div>
                                 <ul class="subnav--main">
                                     <!-- <li><a href="nhpb">Le NHPB</a></li> -->
-                                    <li><a href="pipeband">Pipe Band ?</a></li>
-                                    <li><a href="membres">Les Membres</a></li>
+                                    <li><a href="{{ path('pipeband') }}">Pipe Band ?</a></li>
+                                    <li><a href="{{ path('musicien') }}">Les Membres</a></li>
                                     <li><a href="{{ path('instruments') }}">Les Instruments</a></li>
-                                    <li><a href="repertoire">Le répertoire</a></li>
-                                    <li><a href="uniforme">L'uniforme</a></li>
+                                    <li><a class="active--link" href="{{ path('music') }}">Le répertoire</a></li>
+                                    <li><a href="{{ path('uniform') }}">L'uniforme</a></li>
                                     <li><a href="Accueil"><img class="logo" src="/build/pik/logo-square.png" /></a></li>
                                 </ul>
                             </div>
@@ -45,28 +45,14 @@
 
             <div class="col-lg-6 col-md-10 col-sm-12 xs-12">
                 <div class="card event--card p-5">
-                    <h1 class="pt-5 card-title">Les actualités du pipe Band</h1>
-                {% for event in events %}
-                <div class="event-container">
-                    <h3 class="event-title"><a class="event--detail" href="{{ path('event_detail', {'id': event.id}) }}">{{ event.eventTitle }}</a></h3>
-                    <h5>{{ event.eventSubtitle }}</h5>
-                    <div class="event-pik">
-                        <img src="{{ vich_uploader_asset(event, 'imageFile') }}">
-                    </div>
-                    <div class="event-date">
-                        <p>{% if not event.adresses.empty %}
-                                {% for Adress in event.adresses %}
-                                    {{ Adress.city.CityName }}
-                                {% endfor %}
-                            {% endif %}, le
-                            {{ event.eventDateStart ? event.eventDateStart|date('d/m/Y') : '' }}.
-                        </p>
-                    </div>
-                    <div class="event-article">
-                        <p>{{ event.eventDescription }}</p>
-                    </div>
-                </div>
-                {% endfor %}
+                <h1 class="pt-5 card-title">Notre répertoire</h1>
+                    <p>
+                        Nous jouons de la musique régimentaire et traditionnelle écossaise : slow air, marche,
+                        6/8, strathspey, Pìobaireachd... Des airs que vous connaissez surement comme : Amazing Grace, Flowers of Scotland, Auld lang syne
+                        When the pipers play à d'autre que vous découvrirez, Ichy Finger, Steamtrain to Mallaig...
+                        Nous interprétons aussi des airs de musique contemporaine : We will rock you,
+                        les lac du Connemara, la Boum... etc..
+                    </p>
                 </div>
             </div>
 

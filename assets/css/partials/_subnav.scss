@@ -1,11 +1,157 @@
 @import "../partials/_charte";
 
 .subnav {
-  background-color: gray;
+  position: fixed;
+  z-index: 30;
+  top: 0;
 
+  .subnav--sergent {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: grey;
+    padding: 0 3% 0 3%;
+    margin-left: 2.48rem;
+    min-height: 21rem;
+    max-height: 21rem;
+    position: relative;
+    z-index: 30;
+    top: 0;
+
+    .logo {
+      height: 6rem;
+      width: 6rem;
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .subnav--main {
+      margin-top: -38rem;
+      margin-left: -1.5rem;
+      position: absolute;
+      z-index: 1000;
+
+      li {
+        padding-top: 0.1rem;
+        text-align: center;
+
+        a {
+          color: white;
+          font-size: 1rem;
+          font-family: $secondary;
+        }
+
+        a:link {
+          text-decoration: none;
+        }
+        .active--link {
+          color: $colorBlack;
+          padding: -0.5rem;
+        }
+      }
+    }
+  }
+
+  .subnav--tri {
+    position: absolute;
+    padding-top: 21rem;
+    margin-left: -0.57rem;
+    z-index: 35;
+
+    .px {
+      border-style: solid;
+      border-width: 7.48rem;
+      border-color: grey rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    }
+  }
+}
+
+.subnav--rond {
+  padding-top: 29.7rem;
+}
+
+.medaille--rond {
+  background-color: red;
+  //background-image: url("");
+  padding: 2rem 2rem 2rem 2rem;
+  border-radius: 50%;
+
+  .adress {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  p {
+    //padding-top: 3rem;
+    text-align: center;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-bottom: 0 !important;
+  }
+  .K2 {
+    display: none;
+  }
 }
 
 .medaille--rond:hover {
 
+}
+
+
+@media (max-width: 1450px) {
+  .subnav {
+    .subnav--sergent {
+      width: 80%;
+      .subnav--main {
+        margin-left: -3.2rem;
+        margin-top: -32rem;
+      }
+
+    }
+
+    .subnav--tri {
+      .px {
+        border-width: 6rem;
+        border-color: grey rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+      }
+    }
+  }
+
+  .medaille--rond {
+    background-color: red;
+    //background-image: url("");
+    padding: 2rem;
+    border-radius: 50%;
+
+    .adress {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      .p--rond {
+        color: #916319;
+      }
+    }
+    p {
+      //padding-top: 3rem;
+      text-align: center;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-bottom: 0 !important;
+    }
+
+
+    .K1 {
+      display: none;
+    }
+    .K2 {
+      display: block;
+    }
+    .adress--a {
+      display: none;
+    }
+
+  }
+}
+@media (max-width: 1300px) {
+  .subnav {
+    display: none;
+  }
 }
 

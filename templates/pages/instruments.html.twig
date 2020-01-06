@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block nav %}
+    {% include 'layout/nav.html.twig' %}
+{% endblock %}
+
+{% block body %}
+
+    <!--
+    <img src="{{ asset('build/pik/bp/armada-rouen-2019-nhpb-cornemuserouen.jpg') }}" class="background--page" alt="...">
+    -->
+
+    <div class="container-fluid section--box">
+        <div class="row">
+
+            <div class="col-lg-3 col-md-3">
+                <div class="subnav">
+                    <div class="subnav--sergent">
+                        <div class="subnav--tri"><img class="px" src="/build/pik/1px.png" /></div>
+                        <div class="subnav--rond">
+                            <div class="medaille--rond">
+                                <div class="adress">
+                                    <p class="p--rond NHPB K1">Normandy Highland Pipe Band</p>
+                                    <p class="p--rond NHPB K2">NHPB</p>
+                                    <p class="p--rond adress--a">MJC Rive gauche</p>
+                                    <p class="p--rond adress--a">Place de Hanovre</p>
+                                    <p class="p--rond">76100 Rouen</p>
+                                    <p class="p--rond">Tél : 06 08 63 53 60</p>
+                                    <a href="mailto:pipebandnhpb@gmail.com">
+                                        <p class="p--rond">pipebandnhpb@gmail.com</p>
+                                    </a>
+                                </div>
+                                <ul class="subnav--main">
+                                    <!-- <li><a href="nhpb">Le NHPB</a></li> -->
+                                    <li><a href="{{ path('pipeband') }}">Pipe Band ?</a></li>
+                                    <li><a href="{{ path('musicien') }}">Les Membres</a></li>
+                                    <li><a class="active--link" href="{{ path('instruments') }}">Les Instruments</a></li>
+                                    <li><a href="{{ path('music') }}">Le répertoire</a></li>
+                                    <li><a href="{{ path('uniform') }}">L'uniforme</a></li>
+                                    <li><a href="Accueil"><img class="logo" src="/build/pik/logo-square.png" /></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-10 col-sm-12 xs-12">
+                <div class="card event--card p-5">
+                    <h1 class="pt-5 card-title">Les instruments</h1>
+                    <div class="event-container">
+                        <h3 class="event-title">La cornemuse</h3>
+                        <p>
+                            La grande cornemuse écossaise est un instrument bizarre initialement fabriqué à partir de la panse de
+                            brebis géante que l'on vidait au préalable. Elle émet un son assourdissant, ce qui ne permet pas au musiciens
+                            de jouer à la maison sous peine de dispute, divorce, voire décès prématuré. Heureusement un écossais astucieux a
+                            inventé le practice de cornemuse, qui a permi de démocratiser la pratique de cet instrument.
+                        </p>
+                    </div>
+                    <div class="event-container">
+                        <h3 class="event-title">Le snare drum</h3>
+                        <p>
+                            Le snare Drum est un petit tambour au son sec. Il accompagne agréablement les cornemuses et permet aux joueurs
+                            de marcher en rythme..
+                        </p>
+                    </div>
+                    <div class="event-container">
+                        <h3 class="event-title">Le Tom</h3>
+                        <p>
+                            Le Tom est un tambour qui se joue avec de jolies mailloches à moumoute. Les joueurs de tom effectuent des
+                            figures compliquées de tourné-boulé de la mailloche pour en fin de figure asséner un coup sur la peau de l'instrument.
+                            La difficulté est de ne pas se la mettre dans l'oeil.
+                        </p>
+                    </div>
+                    <div class="event-container">
+                        <h3 class="event-title">La grosse Caisse</h3>
+                        <p>
+                            La grosse caisse est un méga tambour que l'on porte sur le ventre. En général, il n'y a qu'un seul joueur de grosse caisse
+                            par défilé. C'est celui qui entend le mieux, car en fait il ne voit pas ou il va et est obligé de se diriger au son des cornemuses
+                            et des drums.
+                        </p>
+                    </div>
+                    <div class="event-container">
+                        <h3 class="event-title">Le gros baton</h3>
+                        <p>
+                            Le gros baton, n'émet aucun son. Il sert au drum major pour initier le rythme du band. Celui-ci défile en tête du cortège et si il
+                            se plante, le reste du groupe aussi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="gallery">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include 'layout/footer.html.twig' %}
+{% endblock %}

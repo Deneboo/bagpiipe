@@ -3,7 +3,9 @@
 @import "partials/_nav.scss";
 @import "partials/_home.scss";
 @import "partials/_event.scss";
+@import "partials/_pages.scss";
 @import "partials/_subnav.scss";
+@import "partials/_aside.scss";
 @import "partials/_footer.scss";
 
 body {
@@ -21,6 +23,6 @@ body {
   }
 
   p {
-    color: $colorBlack;
+    //color: $colorBlack;
   }
 }

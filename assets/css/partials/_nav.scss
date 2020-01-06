@@ -24,12 +24,22 @@
   }
 }
 
+@media (max-width: 1450px) {
+
+  a {
+    font-size: 0.8rem;
+  }
+}
 @media (max-width: 1300px) {
 
   .navbar-nav {
     margin-left: 3vw !important;
   }
   .nav-link {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+  }
+
+  a {
+    font-size: 1rem;
   }
 }

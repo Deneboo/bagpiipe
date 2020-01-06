@@ -1,11 +1,26 @@
+@import "_charte.scss";
+
+.event--card {
+  margin-left: -3rem !important;
+  margin-right: 2.5rem !important;
+}
+
 .event-container {
   background-color: lightgray;
   margin-bottom: 1rem;
   padding: 1rem;
 
+  .event-title-show {
+    transform: rotate(45deg) !important;
+  }
+
   .event-title {
     text-align: center;
     padding: 1rem;
+
+    a {
+      color: $colorBlack;
+    }
   }
   .event-pik {
     text-align: center;
