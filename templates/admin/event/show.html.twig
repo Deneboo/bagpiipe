@@ -5,43 +5,56 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Event</h1>
-
-    <table class="table">
-        <tbody>
-            {% if event.filename %}
-                <img src="{{ vich_uploader_asset(event, 'imageFile') }}" style="width: 15vw; height: auto;">
-            {% endif %}
-            <tr>
-                <th>Event_title</th>
-                <td>{{ event.eventTitle }}</td>
-            </tr>
-            <tr>
-                <th>Event_subtitle</th>
-                <td>{{ event.eventSubtitle }}</td>
-            </tr>
-            <tr>
-                <th>Event_description</th>
-                <td>{{ event.eventDescription }}</td>
-            </tr>
-            <tr>
-                <th>Event_date_start</th>
-                <td>{{ event.eventDateStart ? event.eventDateStart|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Event_date_end</th>
-                <td>{{ event.eventDateEnd ? event.eventDateEnd|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Event_story</th>
-                <td>{{ event.eventStory }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('event_index') }}">back to list</a>
-
-    <a href="{{ path('event_edit', {'id': event.id}) }}">edit</a>
-
-    {{ include('admin/event/_delete_form.html.twig') }}
+    <div class="container-fluid section--box">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
+                <div class="mt-5 pt-5">
+                    {% include 'layout/subnav_admin.html.twig' %}
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-9 xs-9">
+                <div class="container--section--admin pl-lg-5">
+                    <div class="section--admin p-lg-2">
+                        <h1 class="pt-5">Détail de l'évènement</h1>
+                        <table class="table">
+                            <tbody>
+                            {% if event.filename %}
+                                <img src="{{ vich_uploader_asset(event, 'imageFile') }}" style="width: 15vw; height: auto;">
+                            {% endif %}
+                            <tr>
+                                <th>Titre :</th>
+                                <td>{{ event.eventTitle }}</td>
+                            </tr>
+                            <tr>
+                                <th>Sous titre :</th>
+                                <td>{{ event.eventSubtitle }}</td>
+                            </tr>
+                            <tr>
+                                <th>Description :</th>
+                                <td>{{ event.eventDescription }}</td>
+                            </tr>
+                            <tr>
+                                <th>Date (date de début) :</th>
+                                <td>{{ event.eventDateStart ? event.eventDateStart|date('Y-m-d H:i:s') : '' }}</td>
+                            </tr>
+                            <tr>
+                                <th>Date de fin :</th>
+                                <td>{{ event.eventDateEnd ? event.eventDateEnd|date('Y-m-d H:i:s') : '' }}</td>
+                            </tr>
+                            <tr>
+                                <th>Article :</th>
+                                <td>{{ event.eventStory }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <a  class="btn btn-success" href="{{ path('event_index') }}">Liste des évènements</a>
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <a class="btn btn-warning" href="{{ path('event_edit', {'id': event.id}) }}">Modifier</a>
+                        {{ include('admin/event/_delete_form.html.twig') }}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

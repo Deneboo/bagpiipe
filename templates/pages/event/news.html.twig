@@ -29,12 +29,12 @@
                                 </div>
                                 <ul class="subnav--main">
                                     <!-- <li><a href="nhpb">Le NHPB</a></li> -->
-                                    <li><a href="pipeband">Pipe Band ?</a></li>
-                                    <li><a href="membres">Les Membres</a></li>
+                                    <li><a href="{{  path('pipeband') }}">Pipe Band ?</a></li>
+                                    <li><a href="{{ path('musicien') }}">Les Membres</a></li>
                                     <li><a href="{{ path('instruments') }}">Les Instruments</a></li>
-                                    <li><a href="repertoire">Le répertoire</a></li>
-                                    <li><a href="uniforme">L'uniforme</a></li>
-                                    <li><a href="Accueil"><img class="logo" src="/build/pik/logo-square.png" /></a></li>
+                                    <li><a href="{{ path('music') }}">Le répertoire</a></li>
+                                    <li><a href="{{ path('uniform') }}">L'uniforme</a></li>
+                                    <li><a href="{{ path('home') }}"><img class="logo" src="/build/pik/logo-square.png" /></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -64,6 +64,7 @@
                     </div>
                     <div class="event-article">
                         <p>{{ event.eventDescription }}</p>
+                        <p>{{ event.eventStory }}</p>
                     </div>
                 </div>
                 {% endfor %}

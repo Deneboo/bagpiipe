@@ -1,0 +1,13 @@
+@import "../partials/_charte";
+
+.container--section--admin {
+  position: relative;
+  background-color: $colorGrayActu;
+  min-height: 100vh;
+  margin-top: 48px;
+  margin-right: -16px;
+
+  .section--admin {
+    padding: 0 5vw 0 2vw !important;
+  }
+}

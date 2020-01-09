@@ -19,6 +19,7 @@ class CityType extends AbstractType
                 ['label' => 'Code postal :'])
             ->add('city_country', CountryType::class, array(
                 'label' => 'Pays :',
+                'label_format' => 'form.city.%name%',
                 'preferred_choices' => array('FR'),
                 'choice_translation_locale' => null
             ))

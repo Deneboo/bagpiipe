@@ -12,12 +12,16 @@
                 <a class="nav-link" href="{{ path('event_index') }}">Les évènements</a>
             </li>
             <li class="nav-item ml-lg-5 pl-lg-2">
-                <a class="nav-link" href="" tabindex="-1" aria-disabled="true">Les membres</a>
+                <a class="nav-link"  href="{{ path('user_index') }}">Les utilisateurs</a>
+            </li>
+            <li class="nav-item ml-lg-5 pl-lg-2">
+                <a class="nav-link" href="" tabindex="-1" aria-disabled="true">Les musiciens</a>
             </li>
             <li class="nav-item ml-lg-5 pl-lg-2">
                 <a class="nav-link" href="{{ path('home') }}" tabindex="-1" aria-disabled="true">Retour au site</a>
             </li>
         </ul>
+
         <!-- research zone found of the Bootstrap code
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

@@ -7,51 +7,63 @@
 {% block body %}
     <div class="container-fluid section--box">
         <div class="row">
-
-            <div class="col-lg-12 col-md-12 col-sm-12 xs-12">
-                <div class="card text-dark p-5">
-                    <h1 class="pt-5 card-title">Liste des évènements</h1>
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Image</th>
-                            <th>Date de début</th>
-                            <th>Date de fin</th>
-                            <th>Ville</th>
-                            <th>actions</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for event in events %}
-                            <tr>
-                                <td>{{ event.eventTitle }}</td>
-                                <td><img src="{{ vich_uploader_asset(event, 'imageFile') }}" style="width: 10vw; height: auto;"></td>
-                                <td>{{ event.eventDateStart ? event.eventDateStart|date('d-m-Y') : '' }}</td>
-                                <td>{{ event.eventDateEnd ? event.eventDateEnd|date('d-m-Y') : '' }}</td>
-                                <td>
-                                    {% if not event.adresses.empty %}
-                                        {% for Adress in event.adresses %}
-                                            {{ Adress.city.CityName }}
-                                        {% endfor %}
-                                    {% endif %}
-                                </td>
-                                <td>
-                                    <a class="btn btn-info" href="{{ path('event_show', {'id': event.id}) }}">Détails</a>
-                                    <a class="btn btn-warning" href="{{ path('event_edit', {'id': event.id}) }}">Modifier</a>
-                                </td>
-                            </tr>
-                        {% else %}
-                            <tr>
-                                <td colspan="8">no records found</td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                    <a href="{{ path('event_new') }}">Create new</a>
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
+                <div class="mt-5 pt-5">
+                    {% include 'layout/subnav_admin.html.twig' %}
                 </div>
             </div>
+            <div class="col-lg-10 col-md-10 col-sm-9 xs-9">
+                <div class="container--section--admin pl-lg-5">
+                    <div class="section--admin p-lg-2">
+                        <h1 class="pt-5">Liste des évènements</h1>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Image</th>
+                                {% if is_granted('ROLE_ADMIN') %}
+                                <th>Date de début</th>
+                                <th>Date de fin</th>
+                                {% endif %}
+                                <th>Ville</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for event in events %}
+                                <tr>
+                                    <td>{{ event.eventTitle }}</td>
+                                    <td><img src="{{ vich_uploader_asset(event, 'imageFile') }}" style="width: 10vw; height: auto;"></td>
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                    <td>{{ event.eventDateStart ? event.eventDateStart|date('d-m-Y') : '' }}</td>
+                                    <td>{{ event.eventDateEnd ? event.eventDateEnd|date('d-m-Y') : '' }}</td>
+                                    {% endif %}
+                                    <td>
+                                        {% if not event.adresses.empty %}
+                                            {% for Adress in event.adresses %}
+                                                {{ Adress.city.CityName }}
+                                            {% endfor %}
+                                        {% endif %}
+                                    </td>
 
+                                    <td>
+                                        <a class="btn btn-info" href="{{ path('event_show', {'id': event.id}) }}">Détails</a>
+                                        {% if is_granted('ROLE_ADMIN') %}
+                                        <a class="btn btn-warning" href="{{ path('event_edit', {'id': event.id}) }}">Modifier</a>
+                                        {% endif %}
+                                        <a class="btn btn-warning" href="{{ path('event_write', {'id': event.id}) }}">Ecrire un article</a>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td colspan="8">Pas d'évènements enregistrés.</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

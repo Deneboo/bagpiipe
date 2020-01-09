@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Event;
 use App\Form\EventType;
 use App\Form\AdressType;
+use App\Form\EventWriteType;
 use App\Repository\EventRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -83,6 +84,29 @@ class AdminEventController extends AbstractController
         }
 
         return $this->render('admin/event/edit.html.twig', [
+            'event' => $event,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/write", name="event_write", methods={"GET","POST"})
+     * @param Request $request
+     * @param Event $event
+     * @return Response
+     */
+    public function write(Request $request, Event $event): Response
+    {
+        $form = $this->createForm(EventWriteType::class, $event);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('event_index');
+        }
+
+        return $this->render('admin/event/write.html.twig', [
             'event' => $event,
             'form' => $form->createView(),
         ]);

@@ -15,9 +15,11 @@
             <div class="col-lg-10 col-md-10 col-sm-9 xs-9">
                 <div class="container--section--admin pl-lg-5">
                     <div class="section--admin p-lg-2">
-                        <h1 class="pt-5">Modifier l'évènement</h1>
-                        {{ include('admin/event/_form.html.twig', {'button_label': 'Update'}) }}
-                        {{ include('admin/event/_delete_form.html.twig') }}
+                        <h1 class="pt-5">Ecrire un article</h1>
+                        {{ form_start(form) }}
+                        {{ form_widget(form) }}
+                        <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+                        {{ form_end(form) }}
                     </div>
                 </div>
             </div>

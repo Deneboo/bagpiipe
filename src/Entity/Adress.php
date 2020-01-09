@@ -19,6 +19,11 @@ class Adress
     private $id;
 
     /**
+     * @ORM\Column(type="string", length=55)
+     */
+    private $adress_title;
+
+    /**
      * @ORM\Column(type="string", length=16, nullable=true)
      */
     private $adress_street_number;
@@ -53,6 +58,23 @@ class Adress
         return $this->id;
     }
 
+    public function getAdressTitle(): ?string
+    {
+        return $this->adress_title;
+    }
+
+
+    /**
+     * @param $adress_title
+     * @return $this
+     */
+    public function setAdressTitle(?string $adress_title): self
+    {
+        $this->adress_title = $adress_title;
+
+        return $this;
+    }
+
     public function getAdressStreetNumber(): ?string
     {
         return $this->adress_street_number;
@@ -74,6 +96,10 @@ class Adress
         return $this->adress_street_name;
     }
 
+    /**
+     * @param string $adress_street_name
+     * @return $this
+     */
     public function setAdressStreetName(string $adress_street_name): self
     {
         $this->adress_street_name = $adress_street_name;

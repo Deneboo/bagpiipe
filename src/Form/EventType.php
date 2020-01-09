@@ -63,7 +63,7 @@ class EventType extends AbstractType
              ->add('adresses', EntityType::class, [
                 'label' => 'Adresse :',
                 'class' => Adress::class,
-                'choice_label' => 'adress_street_name',
+                'choice_label' => 'adress_title',
                 'multiple' => true,
                 'help' => 'Sélectionner l\'adresse.',
             ])

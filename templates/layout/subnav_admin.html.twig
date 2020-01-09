@@ -1,0 +1,49 @@
+<div class="container--subnav--admin p-lg-2">
+
+    <div class="subnav--admin nav flex-column nav-pills p-lg-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        {% if is_granted('ROLE_ADMIN') %}
+        <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="{{ path('admin') }}" role="tab" aria-controls="v-pills-home" aria-selected="true">Accueil</a>
+        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="{{ path('user_index') }}" role="tab" aria-controls="v-pills-profile" aria-selected="false">Membres</a>
+        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="{{ path('event_index') }}" role="tab" aria-controls="v-pills-profile" aria-selected="false">Evènements</a>
+        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="{{ path('adress_index') }}" role="tab" aria-controls="v-pills-profile" aria-selected="false">Adresses</a>
+        <!--
+        <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="v-pills-messages-tab" data-toggle="dropdown" href="" role="button"  aria-haspopup="true" aria-expanded="false"
+               aria-controls="v-pills-messages" aria-selected="false">Evènement</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{{ path('event_index') }}">Adresses</a>
+                <a class="dropdown-item" href="{{ path('adress_index') }}">Evènement</a>
+            </div>
+        </div>
+        -->
+        {% endif %}
+        <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="{{ path('event_index') }}" role="tab" aria-controls="v-pills-home" aria-selected="true">Ecrire un article</a>
+        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="{{ path('home') }}" role="tab" aria-controls="v-pills-settings" aria-selected="false">Retour au site</a>
+    </div>
+
+</div>
+<!-- Test Bootstrap
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown button
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+</div>
+<p>
+    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Link with href
+    </a>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Button with data-target
+    </button>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="card card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+    </div>
+</div>
+-->

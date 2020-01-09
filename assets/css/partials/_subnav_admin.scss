@@ -1,0 +1,16 @@
+@import "../partials/_charte";
+
+.container--subnav--admin {
+  position: fixed;
+  left: 0;
+  top: 50px;
+  min-width: 18vw;
+  min-height: 100vh;
+  background-color: $colorGraySergent;
+  z-index: 10;
+
+  .subnav--admin {
+    border: dashed $colorGrayAdress 1px;
+    min-height:98vh;
+  }
+}

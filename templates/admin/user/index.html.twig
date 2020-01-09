@@ -1,41 +1,52 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User index{% endblock %}
+{% block nav %}
+    {% include 'layout/nav_admin.html.twig' %}
+{% endblock %}
 
 {% block body %}
-    <h1>User index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Email</th>
-                <th>Roles</th>
-                <th>Password</th>
-                <th>Username</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for user in users %}
-            <tr>
-                <td>{{ user.id }}</td>
-                <td>{{ user.email }}</td>
-                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                <td>{{ user.password }}</td>
-                <td>{{ user.username }}</td>
-                <td>
-                    <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('user_new') }}">Create new</a>
+    <div class="container-fluid section--box">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
+                <div class="mt-5 pt-5">
+                    {% include 'layout/subnav_admin.html.twig' %}
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-9 xs-9">
+                <div class="container--section--admin pl-lg-5">
+                    <div class="section--admin p-lg-2">
+                        <h1 class="pt-5">Les Membres</h1>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Adresse électronique :</th>
+                                <th>Pseudonyme :</th>
+                                <th>Rôles :</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for user in users %}
+                                <tr>
+                                    <td>{{ user.email }}</td>
+                                    <td>{{ user.username }}</td>
+                                    <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                                    <td>
+                                        <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
+                                        <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td colspan="6">Personne ici !</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                        <a class="btn btn-primary" href="{{ path('user_new') }}">Create new</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
