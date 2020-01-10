@@ -3,15 +3,24 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-
-    <h1>Register</h1>
-
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.username) }}
-        {{ form_row(registrationForm.plainPassword) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+    <img src="{{ asset('build/pik/Clan_Stewart_tartan.svg.png') }}" class="background--page" alt="...">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4 mt-5">
+                <div class="card m-5 p-5">
+                    <h3 class="mb-3 font-weight-normal">S'enregistrer</h3>
+                    {{ form_start(registrationForm) }}
+                    {{ form_row(registrationForm.email) }}
+                    {{ form_row(registrationForm.username) }}
+                    {{ form_row(registrationForm.plainPassword) }}
+                    {{ form_row(registrationForm.agreeTerms) }}
+                    <button class="btn btn-success">Sauvegarder</button>
+                    <a class="btn btn-warning ml-3" href="{{ path('home') }}">Retour</a>
+                    {{ form_end(registrationForm) }}
+                </div>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
 {% endblock %}

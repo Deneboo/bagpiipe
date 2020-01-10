@@ -24,7 +24,7 @@ class RegistrationFormType extends AbstractType
             ->add('username', null,
                 ['label' => 'Pseudonyme :'])
             ->add('agreeTerms', CheckboxType::class, [
-                'label' => 'Termes d\'acceptance :',
+                'label' => 'Termes d\'acceptance...',
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
