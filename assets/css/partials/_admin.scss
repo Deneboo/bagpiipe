@@ -2,12 +2,57 @@
 
 .container--section--admin {
   position: relative;
-  background-color: $colorGrayActu;
+  background-color: $colorGrayAdress;
   min-height: 100vh;
   margin-top: 48px;
-  margin-right: -16px;
+  margin-right: -15px;
+  margin-left: 8px;
+  padding-top: 10px;
 
   .section--admin {
     padding: 0 5vw 0 2vw !important;
+
+    .section--admin--title {
+      color: $colorGraySergent;
+      font-family: $principaleLight;
+    }
+
+    p {
+      font-family: $principaleLight;
+    }
+
+    .container--article--admin {
+      margin: 5px 15px 2px 5px;
+      background-color: $colorBlueMember;
+      min-width: 30vw;
+
+      .article--admin {
+        border: dashed $colorGrayAdress 1px;
+        min-height:30vh;
+
+        .article--title--admin {
+          background-color: $colorBlack;
+          color: $colorGrayAdress;
+        }
+
+        .container--btn--username {
+          .btn--username {
+            color: $colorWhite;
+            font-family: "Courier New";
+            font-size: 2.1vh;
+            background-color: $colorGraySergent;
+            border: dotted $colorBlack 1px;
+          }
+        }
+      }
+    }
+    .container--article--admin-2  {
+       @extend .container--article--admin;
+       background-color: yellowgreen !important;
+      .article--admin {
+        border: dashed $colorWhite 1px;
+        min-height:30vh;
+      }
+     }
   }
 }

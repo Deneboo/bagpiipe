@@ -19,8 +19,9 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>Adresse électronique :</th>
+                                <th>Nom et prénom :</th>
                                 <th>Pseudonyme :</th>
+                                <th>Photo :</th>
                                 <th>Rôles :</th>
                                 <th>Actions</th>
                             </tr>
@@ -28,12 +29,22 @@
                             <tbody>
                             {% for user in users %}
                                 <tr>
-                                    <td>{{ user.email }}</td>
+                                    <td>
+                                        {% if user.member != null %}
+                                            {{ user.member.memberName }}
+                                            {{ user.member.memberSurname }}
+                                        {% endif %}
+                                    </td>
                                     <td>{{ user.username }}</td>
+                                    <td>
+                                    {% if user.member != null %}
+                                        <img src="{{ vich_uploader_asset(user.member, 'imageFile') }}" style="width: 3vw; height: auto;">
+                                    {% endif %}
+                                    </td>
                                     <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
                                     <td>
-                                        <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
-                                        <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+                                        <a class="btn btn-info" href="{{ path('user_show', {'id': user.id}) }}">Détail</a>
+                                        <a class="btn btn-success" href="{{ path('user_edit', {'id': user.id}) }}">Modifier</a>
                                     </td>
                                 </tr>
                             {% else %}

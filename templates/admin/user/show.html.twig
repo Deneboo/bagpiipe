@@ -18,14 +18,41 @@
                         <h1 class="pt-5">{{ user.username }}</h1>
                         <table class="table">
                             <tbody>
+                            {% if user.member != null %}
+                            <tr>
+                                <th>Nom et prénom :</th>
+                                <td>
+                                    {{ user.member.memberName }}
+                                    {{ user.member.memberSurname }}
+                                </td>
+                            </tr>
+                                <th>A propos :</th>
+                                <td>{{ user.member.memberStory }}</td>
                             <tr>
                                 <th>Adresse électronique :</th>
                                 <td>{{ user.email }}</td>
                             </tr>
                             <tr>
+                                <th>Date de naissance :</th>
+                                <td>{{ user.member.memberBirthDate ? user.member.memberBirthDate|date('d-m-Y') : '' }}</td>
+                            </tr>
+                            <tr>
+                                <th>Member_information</th>
+                                <td>{{ user.member.memberInformation }}</td>
+                            </tr>
+                            <tr>
+                                <th>Member_phone</th>
+                                <td>{{ user.member.memberPhone }}</td>
+                            </tr>
+                            <tr>
+                                <th>Statut :</th>
+                                <td>{{ user.member.memberStatut ? user.member.memberStatut|json_encode : '' }}</td>
+                            </tr>
+                            <tr>
                                 <th>Rôles :</th>
                                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
                             </tr>
+                            {% endif %}
                             </tbody>
                         </table>
                         <a href="{{ path('user_index') }}">back to list</a>

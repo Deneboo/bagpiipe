@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\User;
+use App\Entity\Member;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
@@ -33,8 +35,18 @@ class UserType extends AbstractType
                     ],
                 ],
             ])
+            ->add('member', MemberType::class, [
+                'label' => 'Membre :'
+            ])
+            /* Erreur get collectionType !!!
+            ->add('member', EntityType::class, [
+                'label' => "Membre :",
+                'class' => Member::class,
+                'choice_label' => 'member_name',
+                'multiple' => 'false',
+            ])
+            */
             // ->add('password')
-
         ;
     }
 

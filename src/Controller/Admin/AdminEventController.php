@@ -4,7 +4,6 @@ namespace App\Controller\Admin;
 
 use App\Entity\Event;
 use App\Form\EventType;
-use App\Form\AdressType;
 use App\Form\EventWriteType;
 use App\Repository\EventRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -89,6 +88,7 @@ class AdminEventController extends AbstractController
         ]);
     }
 
+    // Controller pour le ROLE_WRITER
     /**
      * @Route("/{id}/write", name="event_write", methods={"GET","POST"})
      * @param Request $request

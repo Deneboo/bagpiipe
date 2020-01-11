@@ -19,22 +19,44 @@
         <div class="col-lg-10 col-md-10 col-sm-9 xs-9">
             <div class="container--section--admin pl-lg-5">
                 <div class="section--admin p-lg-2">
-                    <h1 class="pt-5">Administration</h1>
+                    <h1 class="section--admin--title text-center pt-3 pb-3">Administration</h1>
+
                     <div class="container-fluid">
                         <div class="row">
                             {% if is_granted('ROLE_ADMIN') %}
                             <div class="col-lg-6">
-                                <h3>Les Membres</h3>
+                                <div class="container--article--admin p-1">
+                                    <div class="article--admin p-5">
+                                        <h3 class="article--title--admin text-center p-2"><a href="{{ path('user_index') }}">Les Membres</a></h3>
+                                        {% for user in users %}
+                                            {% if user.member != null %}
+                                            <div class="container--btn--username mt-4"><a class="btn--username p-2" href="{{ path('user_show', {'id': user.id}) }}">
+                                                    {{ user.userName }}
+                                                    <img src="{{ vich_uploader_asset(user.member, 'imageFile') }}" style="width: 3vw; height: auto;">
+                                                    {{ user.member.memberName }}
+                                                    {{ user.member.memberSurname }}
+                                                </a></div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
                             </div>
                             {% endif %}
                             <div class="col-lg-6">
-                                <h3>Les Evènements</h3>
-                                {% for event in events %}
-                                    <h6><a href="{{ path('event_show', {'id': event.id}) }}">{{ event.eventTitle }}</a></h6>
-                                {% endfor %}
+                                <div class="container--article--admin-2 p-1">
+                                    <div class="article--admin p-5">
+                                        <h3 class="article--title--admin text-center p-2"><a href="{{ path('event_index') }}">Les Evènements</a></h3>
+                                        {% for event in events %}
+                                            <div class="container--btn--username mt-4"><a class="btn--username p-2" href="{{ path('event_show', {'id': event.id}) }}">{{ event.eventTitle }}</a></div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <p>Vous êtes dans l'interface d'administration. Tous ce que vous enregistrez, sauvegardez,
+                        validez, sera visible de vos visiteurs...</p>
                 </div>
             </div>
         </div>
