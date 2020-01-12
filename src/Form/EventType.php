@@ -33,14 +33,14 @@ class EventType extends AbstractType
                 ['row_attr' => ['class' => 'tinymce', 'id' => '...',],
                 'label' => 'Description :',
                 ])
-            ->add('event_date_start', BirthdayType::class, [
+            ->add('event_date_start', DateType::class, [
                 'label' => 'Date de début :',
                 'placeholder' => [
                     'day' => 'Jour', 'month' => 'Mois', 'year' => 'Année',
                 ],
                 'format' => 'dd-MM-yyyy'
             ])
-            ->add('event_date_end', BirthdayType::class, [
+            ->add('event_date_end', DateType::class, [
                 'label' => 'Date de fin :',
                 'placeholder' => [
                     'day' => 'Jour', 'month' => 'Mois', 'year' => 'Année',

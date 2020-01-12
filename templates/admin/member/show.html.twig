@@ -1,58 +1,55 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Member{% endblock %}
+{% block nav %}
+    {% include 'layout/nav.html.twig' %}
+{% endblock %}
 
 {% block body %}
-    <h1>Member</h1>
-
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ member.id }}</td>
-            </tr>
-            <tr>
-                <th>Filename</th>
-                <td>{{ member.filename }}</td>
-            </tr>
-            <tr>
-                <th>Member_name</th>
-                <td>{{ member.memberName }}</td>
-            </tr>
-            <tr>
-                <th>Member_surname</th>
-                <td>{{ member.memberSurname }}</td>
-            </tr>
-            <tr>
-                <th>Member_birth_date</th>
-                <td>{{ member.memberBirthDate ? member.memberBirthDate|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Member_membership_date</th>
-                <td>{{ member.memberMembershipDate ? member.memberMembershipDate|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Member_information</th>
-                <td>{{ member.memberInformation }}</td>
-            </tr>
-            <tr>
-                <th>Member_phone</th>
-                <td>{{ member.memberPhone }}</td>
-            </tr>
-            <tr>
-                <th>Member_story</th>
-                <td>{{ member.memberStory }}</td>
-            </tr>
-            <tr>
-                <th>Member_statut</th>
-                <td>{{ member.memberStatut ? member.memberStatut|json_encode : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('member_index') }}">back to list</a>
-
-    <a href="{{ path('member_edit', {'id': member.id}) }}">edit</a>
-
-    {{ include('admin/member/_delete_form.html.twig') }}
+    <div class="container-fluid section--box">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
+                <div class="mt-5 pt-5">
+                    {% include 'layout/subnav_admin.html.twig' %}
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-9 xs-9">
+                <div class="container--section--admin pl-lg-5">
+                    <div class="section--admin p-lg-2">
+                        <h1 class="pt-5">{{ member.memberName }} {{ member.memberSurname }}</h1>
+                        <img  class="pb-3" src="{{ vich_uploader_asset(member, 'imageFile') }}" style="width: 10vw; height: auto;">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th>Date de naissance :</th>
+                                    <td>{{ member.memberBirthDate ? member.memberBirthDate|date('Y-m-d H:i:s') : '' }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Date d'entrée :</th>
+                                    <td>{{ member.memberMembershipDate ? member.memberMembershipDate|date('Y-m-d H:i:s') : '' }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Informations :</th>
+                                    <td>{{ member.memberInformation }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Téléphone :</th>
+                                    <td>{{ member.memberPhone }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Hitoire :</th>
+                                    <td>{{ member.memberStory }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Statut :</th>
+                                    <td>{{ member.memberStatut ? member.memberStatut|json_encode : '' }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
+
+

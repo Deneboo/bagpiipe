@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -27,9 +28,17 @@ class MemberType extends AbstractType
                 'placeholder' => [
                     'day' => 'Jour', 'month' => 'Mois', 'year' => 'Année',
                 ],
-                'format' => 'dd-MM-yyyy'
+                'format' => 'dd-MM-yyyy',
+                'required' => false
             ])
-            ->add('member_membership_date')
+            ->add('member_membership_date', DateType::class, [
+                'label' => 'Date d\'entrée :',
+                'placeholder' => [
+                    'day' => 'Jour', 'month' => 'Mois', 'year' => 'Année',
+                ],
+                'format' => 'dd-MM-yyyy',
+                'required' => false
+            ])
             ->add('member_information')
             ->add('member_phone')
             ->add('member_story')

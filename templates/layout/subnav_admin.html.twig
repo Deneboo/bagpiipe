@@ -2,23 +2,19 @@
 
     <div class="subnav--admin nav flex-column nav-pills p-lg-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
         {% if is_granted('ROLE_ADMIN') %}
-        <a class="nav-link mt-5" id="v-pills-home-tab" data-toggle="pill" href="{{ path('admin') }}" role="tab" aria-controls="v-pills-home" aria-selected="true">Accueil</a>
-        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="{{ path('user_index') }}" role="tab" aria-controls="v-pills-profile" aria-selected="false">Membres</a>
-        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="{{ path('event_index') }}" role="tab" aria-controls="v-pills-profile" aria-selected="false">Evènements</a>
-        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="{{ path('adress_index') }}" role="tab" aria-controls="v-pills-profile" aria-selected="false">Adresses</a>
-        <!--
+        <a class="nav-link mt-5" href="{{ path('admin') }}" role="tab" aria-controls="v-pills-home" aria-selected="true">Accueil</a>
+        <a class="nav-link" href="{{ path('member_index') }}" role="tab" aria-controls="v-pills-profile" aria-selected="false">Membres</a>
         <div class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="v-pills-messages-tab" data-toggle="dropdown" href="" role="button"  aria-haspopup="true" aria-expanded="false"
                aria-controls="v-pills-messages" aria-selected="false">Evènement</a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{ path('event_index') }}">Adresses</a>
-                <a class="dropdown-item" href="{{ path('adress_index') }}">Evènement</a>
+                <a class="dropdown-item" href="{{ path('adress_index') }}">Adresses</a>
+                <a class="dropdown-item" href="{{ path('event_index') }}">Evènement</a>
             </div>
         </div>
-        -->
         {% endif %}
-        <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="{{ path('event_index') }}" role="tab" aria-controls="v-pills-home" aria-selected="true">Ecrire un article</a>
-        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="{{ path('home') }}" role="tab" aria-controls="v-pills-settings" aria-selected="false">Retour au site</a>
+        <a class="nav-link" href="{{ path('event_index') }}" role="tab" aria-controls="v-pills-home" aria-selected="true">Ecrire un article</a>
+        <a class="nav-link" href="{{ path('home') }}" role="tab" aria-controls="v-pills-settings" aria-selected="false">Retour au site</a>
     </div>
 
 </div>

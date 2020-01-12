@@ -5,47 +5,57 @@
 {% endblock %}
 
 {% block body %}
+<div class="container-fluid section--box">
+    <div class="row">
 
-    <img src="{{ asset('build/pik/bp/nhpb-cours-de-cornemuse.jpg') }}" class="background--page" alt="...">
-    <div class="container-fluid section--box">
-        <div class="row">
-            <!--
-            <div class="col-lg-2 col-md-2">
+        <div class="col-lg-3 col-md-3">
+            {% include 'layout/subnav.html.twig' %}
+        </div>
 
+        <div class="col-lg-6 col-md-10 col-sm-12 xs-12">
+            <div class="event--card p-5">
+                <h1 class="pt-5 card-title">L'école de musique</h1>
+                <h3 class="pt-3 pb-2">Apprendre la cornemuse, le snare drum, le tom...</h3>
+                <div class="article-pik">
+                    <img src="/build/pik/bp/nhpb-cours-de-cornemuse.jpg"
+                         alt="cours cornemuse">
+                </div>
+                <p>
+                    VOUS RÊVEZ DE REJOINDRE LE Normandy Highland Pipe Band ! Vous souhaitez apprendre la cornemuse ou les percussions
+                    (Snare ou Tom ténor) avec la méthode traditionnelle écossaise ?
+                    C'est donc le moment de commencer votre apprentissage en suivant l'un de nos cours. Venez comme vous êtes...
+                    un practice à acheter sur place avant votre 1ère leçon et le livret d'apprentissage vous est remis.
+                </p>
+                <p>
+                    C'est donc le moment de commencer votre apprentissage en suivant l'un de nos cours. Venez comme vous êtes...
+                    un practice à acheter sur place avant votre 1ère leçon et le livret d'apprentissage vous est remis.
+                </p>
+                <p>
+                    Les cours se déroulent chaque jeudi, hors vacances scolaires, de 18h30 à la MJC Saint Sever,
+                    place de Hanovre, rive gauche à Rouen.
+                </p>
+                <a href="mailto:pipebandnhpb@gmail.com">
+                    <p>Contact : pipebandnhpb@gmail.com</p>
+                </a>
             </div>
-            -->
-            <div class="col-lg-12 col-md-12 col-sm-12 xs-12">
-                <div class="card text-dark p-5">
-                    <h1 class="pt-5 card-title">L'école de musique</h1>
+        </div>
 
-                    <h3 class="pt-3 pb-2">Apprendre la cornemuse, le snare drum, le tom...</h3>
-
-                    <p>
-                        VOUS RÊVEZ DE REJOINDRE LE Normandy Highland Pipe Band ! Vous souhaitez apprendre la cornemuse ou les percussions
-                        (Snare ou Tom ténor) avec la méthode traditionnelle écossaise ?
-                        C'est donc le moment de commencer votre apprentissage en suivant l'un de nos cours. Venez comme vous êtes...
-                        un practice à acheter sur place avant votre 1ère leçon et le livret d'apprentissage vous est remis.
-                    </p>
-                    <p>
-                        C'est donc le moment de commencer votre apprentissage en suivant l'un de nos cours. Venez comme vous êtes...
-                        un practice à acheter sur place avant votre 1ère leçon et le livret d'apprentissage vous est remis.
-                    </p>
-                    <p>
-                        Les cours se déroulent chaque jeudi, hors vacances scolaires, de 18h30 à la MJC Saint Sever,
-                        place de Hanovre, rive gauche à Rouen.
-                    </p>
-                    <a href="mailto:pipebandnhpb@gmail.com">
-                        <p>Contact</p>
-                    </a>
+        <div class="col-lg-3">
+            <div class="gallery">
+                <h6>Le groupe</h6>
+                <div class="pik-box">
+                    <div class="pik">
+                        <figure class="figure">
+                            <img src="build/pik/bp/nhpb-caricature-2.jpg" class="figure-img img-fluid rounded" alt="...">
+                            <figcaption class="figure-caption fg">Caricature du NHPB par Claude Quillien</figcaption>
+                        </figure>
+                    </div>
                 </div>
             </div>
-            <!--
-            <div class="col-lg-3">
-
-            </div>
-            -->
         </div>
+
     </div>
+</div>
 {% endblock %}
 
 {% block footer %}

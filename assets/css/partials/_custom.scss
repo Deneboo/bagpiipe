@@ -35,7 +35,33 @@
 @import "../../../node_modules/bootstrap-scss/spinners";
 @import "../../../node_modules/bootstrap-scss/utilities";
 @import "../../../node_modules/bootstrap-scss/print";
+@import "../partials/_charte";
 
 .card {
    background-color: #f1f2f3 !important;
 }
+.dropdown-menu {
+
+}
+
+.dropdown-menu--subnav {
+   background-color: $colorGraySergent;
+   border-radius: 0;
+   border: none;
+
+   .dropdown-item--subnav:hover {
+      background-color: lighten($colorGraySergent, 10%);
+   }
+}
+
+.jumbotron {
+   background-color: $colorWhite;
+   margin-top: 50px;
+   padding-top: 25px;
+}
+
+.navbar {
+   transition-delay: 0s;
+   transition-duration: 0s;
+}
+

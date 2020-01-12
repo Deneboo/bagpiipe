@@ -27,17 +27,17 @@
                             <div class="col-lg-6">
                                 <div class="container--article--admin p-1">
                                     <div class="article--admin p-5">
-                                        <h3 class="article--title--admin text-center p-2"><a href="{{ path('user_index') }}">Les Membres</a></h3>
-                                        {% for user in users %}
-                                            {% if user.member != null %}
-                                            <div class="container--btn--username mt-4"><a class="btn--username p-2" href="{{ path('user_show', {'id': user.id}) }}">
-                                                    {{ user.userName }}
-                                                    <img src="{{ vich_uploader_asset(user.member, 'imageFile') }}" style="width: 3vw; height: auto;">
-                                                    {{ user.member.memberName }}
-                                                    {{ user.member.memberSurname }}
+                                        <h3 class="article--title--admin text-center p-2"><a href="{{ path('member_index') }}">Les Membres</a></h3>
+                                        <div class="row">
+                                        {% for member in members %}
+                                            {% if member != null %}
+                                            <div class="col-6 clearfix musicien-box container--btn--username mt-4"><a class="btn--username p-2" href="{{ path('member_show', {'id': member.id}) }}">
+                                                    {{ member.memberName }}
+                                                    {{ member.memberSurname }}
                                                 </a></div>
                                             {% endif %}
                                         {% endfor %}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -55,7 +55,7 @@
                         </div>
                     </div>
 
-                    <p>Vous êtes dans l'interface d'administration. Tous ce que vous enregistrez, sauvegardez,
+                    <p class="mt-5 pb-5">Vous êtes dans l'interface d'administration. Tous ce que vous enregistrez, sauvegardez,
                         validez, sera visible de vos visiteurs...</p>
                 </div>
             </div>

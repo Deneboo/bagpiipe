@@ -5,115 +5,98 @@
 {% endblock %}
 
 {% block body %}
+<div class="container-fluid section--box">
+    <div class="row">
 
-    <img src="{{ asset('build/pik/bp/armada-rouen-2019-nhpb-cornemuserouen.jpg') }}" class="background--page" alt="...">
-    <div class="container-fluid section--box">
-        <div class="row">
-
+        <div class="col-lg-3 col-md-3">
             <div class="col-lg-3 col-md-3">
-                <div class="subnav">
-                    <div class="subnav--sergent">
-                        <div class="subnav--tri"><img class="px" src="/build/pik/1px.png" /></div>
-                        <div class="subnav--rond">
-                            <div class="medaille--rond">
-                                <div class="adress">
-                                    <p class="NHPB K1">Normandy Highland Pipe Band</p>
-                                    <p class="NHPB K2">NHPB</p>
-                                    <p class="adress--a">MJC Rive gauche</p>
-                                    <p class="adress--a">Place de Hanovre</p>
-                                    <p class="">76100 Rouen</p>
-                                    <p>Tél : 06 08 63 53 60</p>
-                                    <a href="mailto:pipebandnhpb@gmail.com">
-                                        <p>pipebandnhpb@gmail.com</p>
-                                    </a>
-                                </div>
-                                <ul class="subnav--main">
-                                    <!-- <li><a href="nhpb">Le NHPB</a></li> -->
-                                    <li><a class="active--link" href="{{ path('pipeband') }}">Pipe Band ?</a></li>
-                                    <li><a href="{{ path('musicien') }}">Les Membres</a></li>
-                                    <li><a href="{{ path('instruments') }}">Les Instruments</a></li>
-                                    <li><a href="{{ path('music') }}">Le répertoire</a></li>
-                                    <li><a href="{{ path('uniform') }}">L'uniforme</a></li>
-                                    <li><a href="{{ path('home') }}"><img class="logo" src="/build/pik/logo-square.png" /></a></li>
-                                </ul>
-                            </div>
-                        </div>
+                {% include 'layout/subnav.html.twig' %}
+            </div>
+        </div>
+
+
+        <div class="col-lg-6 col-md-10 col-sm-12 xs-12">
+            <div class="event--card p-5">
+                <h1 class="pt-5 card-title">Les origines du Pipe-band</h1>
+                <p>
+                    Depuis les temps les plus reculés, des Pipers ou sonneurs de cornemuse,
+                    accompagnaient au combat leur chef de Clan. En jouant des marches,
+                    des danses ou des lamentations (laments), ils exprimaient des joies et des peines,
+                    les batailles, l'amour... En 1745, le roi écossais Charles Edward STUART est défait
+                    par le roi d'Angleterre à la bataille de Culloden. Peu à peu, les Highlanders sont soumis,
+                    ils forment tout d'abord des compagnies mercenaires sous l'autorité de leur chef de Clan.
+                    Peu à peu, la petite noblesse écossaise s'intègre à la hiérarchie des régiments anglais
+                    et dirige ces compagnies. Les officiers conservent le privilège d'avoir un joueur de cornemuse
+                    qu'ils doivent solder. En jouant, le Piper maintient le moral de la troupe et sonne au combat.
+                </p>
+                <p>
+                    Les Pipers marchent devant les Highlanders et à la fin de la compagnie,
+                    des batteurs marquent la cadence en tapant sur leur tambour.
+                </p>
+                <p>
+                    Peu après 1750, ces batteurs sont accompagnés de joueurs de fifres.
+                    Ce petit instrument est d'abord utilisé dans les régiments d'infanterie britanniques.
+                    Néanmoins, les écossais veulent conserver les cornemuses et en 1850 un règlement de la couronne
+                    autorise les régiments écossais à constituer un petit groupe composé de quelques cornemuses
+                    et de tambours afin d'entrainer la marche.
+                    En 1854, un second règlement militaire autorise chaque régiment écossais à constituer
+                    un band militaire composé de 5 Pipers et de tambours aux ordres d'un Pipe - Major.
+                    Ce règlement créant leur poste, les musiciens sont désormais comptés et rétribués par la couronne.
+                    Ils sont aux ordres du régiment mais le band est commandé par un Pipe - major et non plus par un officier de compagnie.
+                    Dans cette configuration, Pipers précédant les batteurs ou Drummers pour défiler,
+                    on peut dire que le Pipe - Band militaire est né.
+
+                </p>
+                <p>
+                    Les traditions militaires évoluent encore et jusqu'au 20ème siècle, le fonctionnement du Pipe - Band évolue et se professionnalise.
+                    L'armée britannique créée une Highland Piping and Drumming School qui forme les Pipers,
+                    Drummers et les Pipe - Majors. Au fil des guerres, des batailles et des campagnes le répertoire des marches et des compositions écossaises
+                    devient un formidable registre sociologique qui, comme un journal de marche, raconte l'évolution des Pipe - Bands
+                    qui sont désormais formés dans chaque régiment des Highlands.
+                </p>
+                <p>
+                    La musique traditionnelle d'Ecosse est ainsi composée et répertoriée dans les registres des régiments. les tenues sont codifiées,
+                    le port du kilt réglementé. La journée du soldat se déroule sous le répertoire des titres qui jalonnent la journée (le réveil,
+                    le repas, le rassemblement...) se substituant au clairon des régiments anglais. Les règlements militaires forgent l'esprit et les traditions de ces bands.
+                    Aujourd'hui encore, le règlement international des compétitions de Pipe - Bands est très strict sur les tenues,
+                    les ordres de défilé et le jeu des Pipers & Drummers.
+                </p>
+                <p>
+                    Au cours de la 1ère guerre mondiale, les Pipers accompagnent encore la vie des soldats dans les tranchées. Les emmenant à l'assaut au son de la cornemuse.
+                    Ils sont décimés et en 1918 ce sont des Pipe - Bands entiers qui ont disparu, ce qui affecte le moral des troupes et n'accompagne plus le recrutement.
+                    L'armée anglaise prend alors la décision d'interdire les Pipers jouant de la cornemuse au combat.
+                </p>
+                <p>
+                    Durant la seconde guerre mondiale, les Pipers & Drummers ne sont pas protégés mais très souvent ils sont brancardiers et ne montent pas directement à l'assaut.
+                    Ils sont un peu épargnés mais d'illustres musiciens disparaissent encore.
+                </p>
+                <p>
+                    Depuis la fin de la 2ème guerre mondiale, les plus grands noms de la cornemuse sont issus des rangs des régiments d'Ecosse qui érigent le jeu de la cornemuse en art musical
+                    et en discipline très stricte. Le pipe band comprend désormais un pupitre de cornemuses et un pupitre de batteurs, les cadres de référence ont des grades qui correspondent
+                    à un niveau de formation et de jeu précis.
+                </p>
+                <a href="mailto:pipebandnhpb@gmail.com">
+                    <p>Contact : pipebandnhpb@gmail.com</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="gallery">
+                <h6>Le groupe</h6>
+                <div class="pik-box">
+                    <div class="pik">
+                        <figure class="figure">
+                            <img src="build/pik/bp/nhpb-caricature-2.jpg" class="figure-img img-fluid rounded" alt="...">
+                            <figcaption class="figure-caption fg">Caricature du NHPB par Claude Quillien</figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
-
-
-            <div class="col-lg-6 col-md-10 col-sm-12 xs-12">
-                <div class="card event--card p-5">
-                    <h1 class="pt-5 card-title">Les origines du Pipe - band</h1>
-                    <p>
-                        Depuis les temps les plus reculés, des Pipers ou sonneurs de cornemuse,
-                        accompagnaient au combat leur chef de Clan. En jouant des marches,
-                        des danses ou des lamentations (laments), ils exprimaient des joies et des peines,
-                        les batailles, l'amour... En 1745, le roi écossais Charles Edward STUART est défait
-                        par le roi d'Angleterre à la bataille de Culloden. Peu à peu, les Highlanders sont soumis,
-                        ils forment tout d'abord des compagnies mercenaires sous l'autorité de leur chef de Clan.
-                        Peu à peu, la petite noblesse écossaise s'intègre à la hiérarchie des régiments anglais
-                        et dirige ces compagnies. Les officiers conservent le privilège d'avoir un joueur de cornemuse
-                        qu'ils doivent solder. En jouant, le Piper maintient le moral de la troupe et sonne au combat.
-                    </p>
-                    <p>
-                        Les Pipers marchent devant les Highlanders et à la fin de la compagnie,
-                        des batteurs marquent la cadence en tapant sur leur tambour.
-                    </p>
-                    <p>
-                        Peu après 1750, ces batteurs sont accompagnés de joueurs de fifres.
-                        Ce petit instrument est d'abord utilisé dans les régiments d'infanterie britanniques.
-                        Néanmoins, les écossais veulent conserver les cornemuses et en 1850 un règlement de la couronne
-                        autorise les régiments écossais à constituer un petit groupe composé de quelques cornemuses
-                        et de tambours afin d'entrainer la marche.
-                        En 1854, un second règlement militaire autorise chaque régiment écossais à constituer
-                        un band militaire composé de 5 Pipers et de tambours aux ordres d'un Pipe - Major.
-                        Ce règlement créant leur poste, les musiciens sont désormais comptés et rétribués par la couronne.
-                        Ils sont aux ordres du régiment mais le band est commandé par un Pipe - major et non plus par un officier de compagnie.
-                        Dans cette configuration, Pipers précédant les batteurs ou Drummers pour défiler,
-                        on peut dire que le Pipe - Band militaire est né.
-
-                    </p>
-                    <p>
-                        Les traditions militaires évoluent encore et jusqu'au 20ème siècle, le fonctionnement du Pipe - Band évolue et se professionnalise.
-                        L'armée britannique créée une Highland Piping and Drumming School qui forme les Pipers,
-                        Drummers et les Pipe - Majors. Au fil des guerres, des batailles et des campagnes le répertoire des marches et des compositions écossaises
-                        devient un formidable registre sociologique qui, comme un journal de marche, raconte l'évolution des Pipe - Bands
-                        qui sont désormais formés dans chaque régiment des Highlands.
-                    </p>
-                    <p>
-                        La musique traditionnelle d'Ecosse est ainsi composée et répertoriée dans les registres des régiments. les tenues sont codifiées,
-                        le port du kilt réglementé. La journée du soldat se déroule sous le répertoire des titres qui jalonnent la journée (le réveil,
-                        le repas, le rassemblement...) se substituant au clairon des régiments anglais. Les règlements militaires forgent l'esprit et les traditions de ces bands.
-                        Aujourd'hui encore, le règlement international des compétitions de Pipe - Bands est très strict sur les tenues,
-                        les ordres de défilé et le jeu des Pipers & Drummers.
-                    </p>
-                    <p>
-                        Au cours de la 1ère guerre mondiale, les Pipers accompagnent encore la vie des soldats dans les tranchées. Les emmenant à l'assaut au son de la cornemuse.
-                        Ils sont décimés et en 1918 ce sont des Pipe - Bands entiers qui ont disparu, ce qui affecte le moral des troupes et n'accompagne plus le recrutement.
-                        L'armée anglaise prend alors la décision d'interdire les Pipers jouant de la cornemuse au combat.
-                    </p>
-                    <p>
-                        Durant la seconde guerre mondiale, les Pipers & Drummers ne sont pas protégés mais très souvent ils sont brancardiers et ne montent pas directement à l'assaut.
-                        Ils sont un peu épargnés mais d'illustres musiciens disparaissent encore.
-                    </p>
-                    <p>
-                        Depuis la fin de la 2ème guerre mondiale, les plus grands noms de la cornemuse sont issus des rangs des régiments d'Ecosse qui érigent le jeu de la cornemuse en art musical
-                        et en discipline très stricte. Le pipe band comprend désormais un pupitre de cornemuses et un pupitre de batteurs, les cadres de référence ont des grades qui correspondent
-                        à un niveau de formation et de jeu précis.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-lg-3">
-                <div class="gallery">
-
-                </div>
-            </div>
-
         </div>
+
     </div>
+</div>
 {% endblock %}
 
 {% block footer %}

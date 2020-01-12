@@ -1,3 +1,5 @@
+@import "_charte.scss";
+
 .article-pik {
   text-align: center;
   padding-bottom: 1rem;
@@ -5,5 +7,31 @@
   img {
     width: 100%;
     border: 0.1rem solid rgba(0, 0, 0, 0.5);
+  }
+}
+
+.musicien-box {
+  text-align: center;
+
+  .pik-id--box {
+    position: relative;
+    height: 20rem;
+    margin-bottom: -5rem;
+
+    .pik-id {
+      width: 200px;
+      height: 265px;
+      opacity: 1;
+      //position: absolute;
+    }
+
+    .pik-id:hover {
+      opacity: 0.3;
+    }
+
+    p {
+      color: $colorWhite !important;
+      background-color: rgba(255, 255, 255, 0.5%);
+    }
   }
 }

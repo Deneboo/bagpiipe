@@ -5,82 +5,45 @@
 {% endblock %}
 
 {% block body %}
-    <!-- MemberController -->
-    <img src="{{ asset('build/pik/bp/armada-rouen-2019-nhpb-cornemuserouen.jpg') }}" class="background--page" alt="...">
-    <div class="container-fluid section--box">
-        <div class="row">
+<!-- MemberController -->
+<div class="container-fluid section--box">
+    <div class="row">
 
-            <div class="col-lg-3 col-md-3">
-                <div class="subnav">
-                    <div class="subnav--sergent">
-                        <div class="subnav--tri"><img class="px" src="/build/pik/1px.png" /></div>
-                        <div class="subnav--rond">
-                            <div class="medaille--rond">
-                                <div class="adress">
-                                    <p class="NHPB K1">Normandy Highland Pipe Band</p>
-                                    <p class="NHPB K2">NHPB</p>
-                                    <p class="adress--a">MJC Rive gauche</p>
-                                    <p class="adress--a">Place de Hanovre</p>
-                                    <p class="">76100 Rouen</p>
-                                    <p>Tél : 06 08 63 53 60</p>
-                                    <a href="mailto:pipebandnhpb@gmail.com">
-                                        <p>pipebandnhpb@gmail.com</p>
-                                    </a>
-                                </div>
-                                <ul class="subnav--main">
-                                    <!-- <li><a href="nhpb">Le NHPB</a></li> -->
-                                    <li><a href="{{ path('pipeband') }}">Pipe Band ?</a></li>
-                                    <li><a class="active--link" href="{{ path('musicien') }}">Les Membres</a></li>
-                                    <li><a href="{{ path('instruments') }}">Les Instruments</a></li>
-                                    <li><a href="{{ path('music') }}">Le répertoire</a></li>
-                                    <li><a href="{{ path('uniform') }}">L'uniforme</a></li>
-                                    <li><a href="Accueil"><img class="logo" src="/build/pik/logo-square.png" /></a></li>
-                                </ul>
+        <div class="col-lg-3 col-md-3">
+            {% include 'layout/subnav.html.twig' %}
+        </div>
+
+        <div class="col-lg-6 col-md-10 col-sm-12 xs-12">
+            <div class="event--card p-5">
+                <h1 class="pt-5">Les Musiciens</h1>
+                <p class="lead">Ils portent le kilt comme personne, souffle dans leur cornemuse avec ferveur, ou tape sur leur drum
+                    plein d'entrain : voici nos musiciens.</p>
+                <hr class="my-4">
+                <div class="row text-center">
+                    {% for member in members %}
+                    <div class="col-4 clearfix musicien-box">
+                        {% if member.memberStatut == 'Musicien' %}
+                            <h5 class="p">{{ member.memberSurname }} {{ member.memberName }}</h5>
+                            <div class="pik-id--box">
+                                <img class="pik-id" src="{{ vich_uploader_asset(member, 'imageFile') }}" style="">
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-6 col-md-10 col-sm-12 xs-12">
-                <div class="card event--card p-5">
-                    <h1 class="pt-5 card-title">Les Membres</h1>
-                    <div class="event-container">
-                        <h3 class="event-title">Les Musiciens</h3>
-                        <p>Ils portent le kilt comme personne, souffle dans leur cornemuse avec ferveur, ou tape sur leur drum
-                        plein d'entrain : voici nos musiciens.</p>
-                        <p>
-                            {% for member in members %}
-                            <div class="card">
-                            <h5 class="pt-5 card-title">
-                                {% if member.memberStatut == 'Musicien' %}
-                            {{ member.memberName }}
-                                    <img src="{{ vich_uploader_asset(member, 'imageFile') }}" style="width: 10vw; height: auto;">
+                            <p class="pik-id--p mb-5">{{ member.memberInformation }}</p>
                         {% endif %}
-                        </h5>
                     </div>
                     {% endfor %}
-                        </p>
-                    </div>
-                    <div class="event-container">
-                        <h3 class="event-title">Les Accompagnants</h3>
-                        <p>Ils portent les bouteilles d'eau avec ferveur, prennent de photos comme personne, et assure la
-                            sécurité des musiciens comme si leur vie en dépendait : voici nos accompagnants.</p>
-                        <p>
-
-                        </p>
-                    </div>
                 </div>
+                <hr class="my-4">
             </div>
-
-            <div class="col-lg-3">
-                <div class="gallery">
-
-                </div>
-            </div>
-
         </div>
+
+        <div class="col-lg-3">
+            <div class="gallery">
+
+            </div>
+        </div>
+
     </div>
+</div>
 {% endblock %}
 
 {% block footer %}

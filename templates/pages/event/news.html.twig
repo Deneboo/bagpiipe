@@ -5,53 +5,23 @@
 {% endblock %}
 
 {% block body %}
-    <!-- EventController -->
-    <img src="{{ asset('build/pik/bp/armada-rouen-2019-nhpb-cornemuserouen.jpg') }}" class="background--page" alt="...">
-    <div class="container-fluid section--box">
+<!-- EventController -->
+<div class="container-fluid section--box">
         <div class="row">
 
             <div class="col-lg-3 col-md-3">
-                <div class="subnav">
-                    <div class="subnav--sergent">
-                        <div class="subnav--tri"><img class="px" src="/build/pik/1px.png" /></div>
-                        <div class="subnav--rond">
-                            <div class="medaille--rond">
-                                <div class="adress">
-                                    <p class="NHPB K1">Normandy Highland Pipe Band</p>
-                                    <p class="NHPB K2">NHPB</p>
-                                    <p class="adress--a">MJC Rive gauche</p>
-                                    <p class="adress--a">Place de Hanovre</p>
-                                    <p class="">76100 Rouen</p>
-                                    <p>Tél : 06 08 63 53 60</p>
-                                    <a href="mailto:pipebandnhpb@gmail.com">
-                                        <p>pipebandnhpb@gmail.com</p>
-                                    </a>
-                                </div>
-                                <ul class="subnav--main">
-                                    <!-- <li><a href="nhpb">Le NHPB</a></li> -->
-                                    <li><a href="{{  path('pipeband') }}">Pipe Band ?</a></li>
-                                    <li><a href="{{ path('musicien') }}">Les Membres</a></li>
-                                    <li><a href="{{ path('instruments') }}">Les Instruments</a></li>
-                                    <li><a href="{{ path('music') }}">Le répertoire</a></li>
-                                    <li><a href="{{ path('uniform') }}">L'uniforme</a></li>
-                                    <li><a href="{{ path('home') }}"><img class="logo" src="/build/pik/logo-square.png" /></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% include 'layout/subnav.html.twig' %}
             </div>
 
-
             <div class="col-lg-6 col-md-10 col-sm-12 xs-12">
-                <div class="card event--card p-5">
-                    <h1 class="pt-5 card-title">Les actualités du pipe Band</h1>
+                <div class="event--card p-5">
+                    <h1 class="pt-5">Les actualités du pipe Band</h1>
                 {% for event in events %}
                 <div class="event-container">
                     <h3 class="event-title"><a class="event--detail" href="{{ path('event_detail', {'id': event.id}) }}">{{ event.eventTitle }}</a></h3>
                     <h5>{{ event.eventSubtitle }}</h5>
                     <div class="event-pik">
-                        <img src="{{ vich_uploader_asset(event, 'imageFile') }}">
+                        <img class="img-fluid" src="{{ vich_uploader_asset(event, 'imageFile') }}">
                     </div>
                     <div class="event-date">
                         <p>{% if not event.adresses.empty %}

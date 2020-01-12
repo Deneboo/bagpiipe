@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block nav %}
-    {% include 'layout/nav_admin.html.twig' %}
+    {% include 'layout/nav.html.twig' %}
 {% endblock %}
 
 {% block body %}
@@ -15,31 +15,35 @@
             <div class="col-lg-10 col-md-10 col-sm-9 xs-9">
                 <div class="container--section--admin pl-lg-5">
                     <div class="section--admin p-lg-2">
-                        <h1 class="pt-5">Les adresses</h1>
+                        <div class="row">
+                            <div class="col-6">
+                                <h1 class="pt-5">Les adresses</h1>
+                            </div>
+                            <div class="col-6">
+                                <a  class="btn btn-success mt-5" href="{{ path('adress_new') }}">Créer une nouvelle adresse</a>
+                                <a class="btn btn-warning mt-5" href="{{ path('event_new') }}">Créer un nouvel évènement</a>
+                            </div>
+                        </div>
                         <table class="table">
                             <thead>
                             <tr>
                                 <th>Titre :</th>
-                                <th>N° de rue :</th>
-                                <thNom de rue :</th>
-                                <th>Informations complémentaires :</th>
-                                <th>Ville</th>
-                                <th>Pays</th>
-                                <th>Actions</th>
+                                <th>Rue :</th>
+                                <th>Lieu :</th>
+                                <th>Ville :</th>
+                                <th>Actions :</th>
                             </tr>
                             </thead>
                             <tbody>
                             {% for adress in adresses %}
                                 <tr>
                                     <td>{{ adress.adressTitle }}</td>
-                                    <td>{{ adress.adressStreetNumber }}</td>
                                     <td>{{ adress.adressStreetName }}</td>
                                     <td>{{ adress.adressInformation }}</td>
                                     <td>{{ adress.city.CityName }}</td>
-                                    <td>{{ adress.city.CityCountry }}</td>
                                     <td>
-                                        <a href="{{ path('adress_show', {'id': adress.id}) }}">show</a>
-                                        <a href="{{ path('adress_edit', {'id': adress.id}) }}">edit</a>
+                                        <a class="btn btn-primary" href="{{ path('adress_show', {'id': adress.id}) }}">show</a>
+                                        <a class="btn btn-warning" href="{{ path('adress_edit', {'id': adress.id}) }}">edit</a>
                                     </td>
                                 </tr>
                             {% else %}
@@ -49,8 +53,6 @@
                             {% endfor %}
                             </tbody>
                         </table>
-                        <a  class="btn btn-success" href="{{ path('adress_new') }}">Créer une nouvelle adresse</a>
-                        <a class="btn btn-warning" href="{{ path('event_new') }}">Créer un nouvel évènement</a>
                     </div>
                 </div>
             </div>

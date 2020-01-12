@@ -6,28 +6,25 @@
 
 {% block body %}
     <!-- EventController -->
-    <div class="container-fluid section--box">
-        <div class="row">
-            <!--
-            <div class="col-lg-2 col-md-2">
+<div class="container-fluid section--box">
+    <div class="row">
 
-            </div>
-            -->
-            <div class="col-lg-12 col-md-12 col-sm-12 xs-12">
-                <div class="card p-5">
-                    <div class="card-header">
-                    <h1 class="pt-5 card-title event-title-show">{{ event.eventTitle }}</h1>
+        <div class="col-lg-3 col-md-3">
+            {% include 'layout/subnav.html.twig' %}
+        </div>
 
-                    <h3 class="event-title">
+        <div class="col-lg-6 col-md-10 col-sm-12 xs-12">
+            <div class="p-5">
+                <div class="event--card ">
+                    <h1 class="pt-5 event-title-show">{{ event.eventTitle }}</h1>
+                    <h5 class="event-title">{{ event.eventSubtitle }}</h5>
+                    <p>
                         {% for Adress in event.adresses %}
                             {{ Adress.city.CityName }},
                         {% endfor %}
-                        le {{ event.eventDateStart ? event.eventDateStart|date('d/m/Y') : '' }}.</h3>
-                    </div>
-                    <div class="card-body">
-                    <div class="card-img">
-                        <img class="card-img" src="{{ vich_uploader_asset(event, 'imageFile') }}">
-                    </div>
+                        le {{ event.eventDateStart ? event.eventDateStart|date('d/m/Y') : '' }}.
+                    </p>
+                    <img class="img-fluid" src="{{ vich_uploader_asset(event, 'imageFile') }}">
                     <p>
                         {{ event.eventDescription }}
                     </p>
@@ -36,11 +33,13 @@
                     </p>
                 </div>
             </div>
-            <!--
-            <div class="col-lg-3">
+        </div>
 
+        <div class="col-lg-3">
+            <div class="gallery">
+                <img src="" alt="">
             </div>
-            -->
         </div>
     </div>
+</div>
 {% endblock %}

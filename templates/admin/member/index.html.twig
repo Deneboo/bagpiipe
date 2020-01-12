@@ -1,51 +1,63 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Member index{% endblock %}
+{% block nav %}
+    {% include 'layout/nav.html.twig' %}
+{% endblock %}
 
 {% block body %}
-    <h1>Member index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Filename</th>
-                <th>Member_name</th>
-                <th>Member_surname</th>
-                <th>Member_birth_date</th>
-                <th>Member_membership_date</th>
-                <th>Member_information</th>
-                <th>Member_phone</th>
-                <th>Member_story</th>
-                <th>Member_statut</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for member in members %}
-            <tr>
-                <td>{{ member.id }}</td>
-                <td><img src="{{ vich_uploader_asset(member, 'imageFile') }}" style="width: 10vw; height: auto;"></td>
-                <td>{{ member.memberName }}</td>
-                <td>{{ member.memberSurname }}</td>
-                <td>{{ member.memberBirthDate ? member.memberBirthDate|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ member.memberMembershipDate ? member.memberMembershipDate|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ member.memberInformation }}</td>
-                <td>{{ member.memberPhone }}</td>
-                <td>{{ member.memberStory }}</td>
-                <td>{{ member.memberStatut ? member.memberStatut|json_encode : '' }}</td>
-                <td>
-                    <a href="{{ path('member_show', {'id': member.id}) }}">show</a>
-                    <a href="{{ path('member_edit', {'id': member.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="11">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('member_new') }}">Create new</a>
+    <div class="container-fluid section--box">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
+                <div class="mt-5 pt-5">
+                    {% include 'layout/subnav_admin.html.twig' %}
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-9 xs-9">
+                <div class="container--section--admin pl-lg-5">
+                    <div class="section--admin p-lg-2">
+                        <div class="row">
+                            <div class="col-6">
+                                <h1 class="pt-5">Liste des membres</h1>
+                            </div>
+                            <div class="col-6">
+                                <a class="btn btn-primary mt-5" href="{{ path('member_new') }}">Créer un nouveau membre</a>
+                            </div>
+                        </div>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Photo :</th>
+                                <th>Nom :</th>
+                                <th>Prénom :</th>
+                                <th>Téléphone :</th>
+                                <th>Statut :</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for member in members %}
+                                <tr>
+                                    <td><img src="{{ vich_uploader_asset(member, 'imageFile') }}" style="width: auto; height: 5vh;"></td>
+                                    <td>{{ member.memberName }}</td>
+                                    <td>{{ member.memberSurname }}</td>
+                                    <td>{{ member.memberPhone }}</td>
+                                    <td>{{ member.memberStatut ? member.memberStatut|json_encode : '' }}</td>
+                                    <td>
+                                        <a class="btn btn-primary" href="{{ path('member_show', {'id': member.id}) }}">show</a>
+                                        <a class="btn btn-warning" href="{{ path('member_edit', {'id': member.id}) }}">edit</a>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td colspan="11">no records found</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
+

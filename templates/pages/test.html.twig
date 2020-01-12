@@ -5,51 +5,39 @@
 {% endblock %}
 
 {% block body %}
-
-    <img src="{{ asset('build/pik/bp/armada-rouen-2019-nhpb-cornemuserouen.jpg') }}" class="background--page" alt="...">
-    <div class="container-fluid section--box">
+<div class="container-fluid section--box">
         <div class="row">
-            <!--
-            <div class="col-lg-2 col-md-2">
 
+            <div class="col-lg-3 col-md-3">
+                {% include 'layout/subnav.html.twig' %}
             </div>
-            -->
-            <div class="col-lg-12 col-md-12 col-sm-12 xs-12">
-                <div class="card text-dark p-5">
-                    <h1 class="pt-5 card-title">Template Test</h1>
 
-                    <h5>Ici on test...</h5>
-
+            <div class="col-lg-6 col-md-10 col-sm-12 xs-12">
+                <div class="event--card p-5">
+                    <h1 class="pt-5 card-title">Le NHPB</h1>
+                    <h3 class="pt-3 pb-2">Qui sommes nous ?</h3>
                     <p>
-                        Quare hoc quidem praeceptum, cuiuscumque est, ad tollendam amicitiam valet; illud potius praecipiendum fuit,
-                        ut eam diligentiam adhiberemus in amicitiis comparandis, ut ne quando amare inciperemus eum,
-                        quem aliquando odisse possemus. Quin etiam si minus felices in diligendo fuissemus,
-                        ferendum id Scipio potius quam inimicitiarum tempus cogitandum putabat.
-                    </p>
-                    <p>
-                        Illud tamen te esse admonitum volo, primum ut qualis es talem te esse omnes existiment ut,
-                        quantum a rerum turpitudine abes, tantum te a verborum libertate seiungas; deinde ut ea in alterum ne dicas,
-                        quae cum tibi falso responsa sint, erubescas. Quis est enim, cui via ista non pateat,
-                        qui isti aetati atque etiam isti dignitati non possit quam velit petulanter, etiamsi sine ulla suspicione,
-                        at non sine argumento male dicere? Sed istarum partium culpa est eorum, qui te agere voluerunt;
-                        laus pudoris tui, quod ea te invitum dicere videbamus, ingenii, quod ornate politeque dixisti.
-                    </p>
-                    <p>
-                        Constituendi autem sunt qui sint in amicitia fines et quasi termini diligendi.
-                        De quibus tres video sententias ferri, quarum nullam probo, unam, ut eodem modo erga amicum adfecti simus,
-                        quo erga nosmet ipsos, alteram, ut nostra in amicos benevolentia illorum erga nos benevolentiae
-                        pariter aequaliterque respondeat, tertiam, ut, quanti quisque se ipse facit, tanti fiat ab amicis.
                     </p>
                     <a href="mailto:pipebandnhpb@gmail.com">
                         <p>Contact</p>
                     </a>
                 </div>
             </div>
-            <!--
-            <div class="col-lg-3">
 
+            <div class="col-lg-3">
+                <div class="gallery">
+                    <h6>Le groupe</h6>
+                    <div class="pik-box">
+                        <div class="pik">
+                            <figure class="figure">
+                                <img src="build/pik/bp/nhpb-caricature-2.jpg" class="figure-img img-fluid rounded" alt="...">
+                                <figcaption class="figure-caption fg">Caricature du NHPB par Claude Quillien</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
             </div>
-            -->
+
         </div>
     </div>
 {% endblock %}

@@ -5,38 +5,45 @@
 {% endblock %}
 
 {% block body %}
+<div class="container-fluid section--box">
+    <div class="row">
 
-    <img src="{{ asset('build/pik/bp/pentecote-kilt-treport-2017-1-nhpb-cornemuserouen.jpg') }}" class="background--page" alt="...">
-    <div class="container-fluid section--box">
-        <div class="row">
-            <!--
-            <div class="col-lg-2 col-md-2">
+        <div class="col-lg-3 col-md-3">
+            {% include 'layout/subnav.html.twig' %}
+        </div>
 
+        <div class="col-lg-6 col-md-10 col-sm-12 xs-12">
+            <div class="event--card p-5">
+                <h1 class="pt-5 card-title">Les prestations</h1>
+                <h3 class="pt-3 pb-2">Faîtes appel au NHPB !</h3>
+                <p>Le Normandy Highlands Pipe Band sillonne la France et outre-frontières pour vous faire découvrir la musique écossaise !!</p>
+                <p>Les prestations  musicales sont assurées par un groupe de musiciens composé de joueurs de cornemuses écossaises (piper)
+                    et de percussionnistes (drummers), dont le répertoire est directement inspiré des musiques traditionnelles régimentaires et
+                    contemporaines écossaises. Un certain nombre de musiciens viennent de formations musicales diverses où ils ont acquis l’expérience
+                    et la culture de la musique traditionnelle écossaise.</p>
+                <p>Pour plus de renseignements : répertoire musical, tenues, tarifs, contactez-nous...</p>
+                <a href="mailto:pipebandnhpb@gmail.com">
+                    <p>Contact : pipebandnhpb@gmail.com</p>
+                </a>
             </div>
-            -->
-            <div class="col-lg-12 col-md-12 col-sm-12 xs-12">
-                <div class="card text-dark p-5">
-                    <h1 class="pt-5 card-title">Les prestations</h1>
+        </div>
 
-                    <h3 class="pt-3 pb-2">Evènements, comémorations, faîtes appel à nos services !</h3>
-
-                    <p>Le Normandy Highlands Pipe Band sillonne la France et outre-frontières pour vous faire découvrir la musique écossaise !!</p>
-                    <p>Les prestations  musicales sont assurées par un groupe de musiciens composé de joueurs de cornemuses écossaises (piper)
-                        et de percussionnistes (drummers), dont le répertoire est directement inspiré des musiques traditionnelles régimentaires et
-                        contemporaines écossaises. Un certain nombre de musiciens viennent de formations musicales diverses où ils ont acquis l’expérience
-                        et la culture de la musique traditionnelle écossaise.</p>
-                    <p>Pour plus de renseignements : répertoire musical, tenues, tarifs, contactez-nous par mail : <a class="article--mail" href="mailto:pipebandnhpb@gmail.com">
-                        pipebandnhpb@gmail.com
-                    </a></p>
+        <div class="col-lg-3">
+            <div class="gallery">
+                <h6>Le groupe</h6>
+                <div class="pik-box">
+                    <div class="pik">
+                        <figure class="figure">
+                            <img src="build/pik/bp/nhpb-caricature-2.jpg" class="figure-img img-fluid rounded" alt="...">
+                            <figcaption class="figure-caption fg">Caricature du NHPB par Claude Quillien</figcaption>
+                        </figure>
+                    </div>
                 </div>
             </div>
-            <!--
-            <div class="col-lg-3">
-
-            </div>
-            -->
         </div>
+
     </div>
+</div>
 {% endblock %}
 
 {% block footer %}

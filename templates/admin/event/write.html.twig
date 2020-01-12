@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block nav %}
-    {% include 'layout/nav_admin.html.twig' %}
+    {% include 'layout/nav.html.twig' %}
 {% endblock %}
 
 {% block body %}
@@ -18,7 +18,7 @@
                         <h1 class="pt-5">Ecrire un article</h1>
                         {{ form_start(form) }}
                         {{ form_widget(form) }}
-                        <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+                        <button class="btn btn-success">{{ button_label|default('Sauvegarder') }}</button>
                         {{ form_end(form) }}
                     </div>
                 </div>

@@ -22,6 +22,14 @@ class MusicienController extends AbstractController
         return $this->render('pages/members/musicien.html.twig', [
             'members' => $memberRepository->findBy(['member_statut' => 'Musicien'])
         ]);
+    }
 
+    public function listAccompagnateur(MemberRepository $memberRepository)
+    {
+        $memberRepository = $this->getDoctrine()->getRepository(Member::class);
+
+        return $this->render('pages/members/Accompagnateur.html.twig', [
+            'members' => $memberRepository->findBy(['member_statut' => 'Accompagnateur'])
+        ]);
     }
 }

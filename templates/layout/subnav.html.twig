@@ -1,0 +1,39 @@
+<div class="subnav">
+    <div class="subnav--sergent">
+        <div class="subnav--tri"><img class="px" src="/build/pik/1px.png" /></div>
+        <div class="subnav--rond">
+            <div class="medaille--rond">
+                <div class="adress">
+                    <p class="NHPB K1">Normandy Highland Pipe Band</p>
+                    <p class="NHPB K2">NHPB</p>
+                    <p class="adress--a">MJC Rive gauche</p>
+                    <p class="adress--a">Place de Hanovre</p>
+                    <p class="">76100 Rouen</p>
+                    <p>Tél : 06 08 63 53 60</p>
+                    <a href="mailto:pipebandnhpb@gmail.com">
+                        <p>pipebandnhpb@gmail.com</p>
+                    </a>
+                </div>
+                <ul class="subnav--main">
+                    <!-- <li><a href="nhpb">Le NHPB</a></li> -->
+                    <li><a href="{{ path('home') }}"><img class="logo" src="/build/pik/logo-square.png" /></a></li>
+                    <li><a href="{{ path('pipeband') }}">Pipe Band ?</a></li>
+                    <li>
+                        <div class="btn-group dropright">
+                            <a type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Les Membres
+                            </a>
+                            <div class="dropdown-menu dropdown-menu--subnav">
+                                <a class="dropdown-item dropdown-item--subnav" href="{{ path('musicien') }}">Les musiciens</a>
+                                <a class="dropdown-item  dropdown-item--subnav" href="#">Les accompagnateurs</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="{{ path('instruments') }}">Les Instruments</a></li>
+                    <li><a href="{{ path('music') }}">Le répertoire</a></li>
+                    <li><a href="{{ path('uniform') }}">L'uniforme</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
