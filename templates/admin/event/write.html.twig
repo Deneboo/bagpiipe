@@ -16,6 +16,7 @@
                 <div class="container--section--admin pl-lg-5">
                     <div class="section--admin p-lg-2">
                         <h1 class="pt-5">Ecrire un article</h1>
+                        <h5>{{ event.eventTitle }}</h5>
                         {{ form_start(form) }}
                         {{ form_widget(form) }}
                         <button class="btn btn-success">{{ button_label|default('Sauvegarder') }}</button>

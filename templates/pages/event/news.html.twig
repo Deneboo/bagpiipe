@@ -15,29 +15,33 @@
 
             <div class="col-lg-6 col-md-10 col-sm-12 xs-12">
                 <div class="event--card p-5">
-                    <h1 class="pt-5">Les actualités du pipe Band</h1>
-                {% for event in events %}
-                <div class="event-container">
-                    <h3 class="event-title"><a class="event--detail" href="{{ path('event_detail', {'id': event.id}) }}">{{ event.eventTitle }}</a></h3>
-                    <h5>{{ event.eventSubtitle }}</h5>
-                    <div class="event-pik">
-                        <img class="img-fluid" src="{{ vich_uploader_asset(event, 'imageFile') }}">
+                    <h1 class="pt-5 card-title">Les actualités du pipe Band</h1>
+                    <p class="lead">Prochaines sorties et prestations du Pipe Band.
+                    </p>
+                    <hr class="my-4">
+                    {% for event in events %}
+                        <div class="event-container">
+                        <h3 class="event-title"><a class="event--detail" href="{{ path('event_detail', {'id': event.id}) }}">{{ event.eventTitle }}</a></h3>
+                        <h5>{{ event.eventSubtitle }}</h5>
+                        <div class="event-date">
+                                <p>A {% if not event.adresses.empty %}
+                                        {% for Adress in event.adresses %}
+                                            {{ Adress.city.CityName }}
+                                        {% endfor %}
+                                    {% endif %}, le
+                                    {{ event.eventDateStart ? event.eventDateStart|date('d/m/Y') : '' }}.
+                                </p>
+                            </div>
+                        <div class="event-pik">
+                            <img class="img-fluid" src="{{ vich_uploader_asset(event, 'imageFile') }}">
+                        </div>
+                        <div class="event-article">
+                            <p>{{ event.eventDescription|nl2br }}</p>
+                            <p>{{ event.eventStory|nl2br }}</p>
+                        </div>
                     </div>
-                    <div class="event-date">
-                        <p>{% if not event.adresses.empty %}
-                                {% for Adress in event.adresses %}
-                                    {{ Adress.city.CityName }}
-                                {% endfor %}
-                            {% endif %}, le
-                            {{ event.eventDateStart ? event.eventDateStart|date('d/m/Y') : '' }}.
-                        </p>
-                    </div>
-                    <div class="event-article">
-                        <p>{{ event.eventDescription }}</p>
-                        <p>{{ event.eventStory }}</p>
-                    </div>
-                </div>
-                {% endfor %}
+                    {% endfor %}
+                    <hr class="my-4">
                 </div>
             </div>
 

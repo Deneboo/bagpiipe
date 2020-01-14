@@ -21,7 +21,7 @@ class AdminMemberController extends AbstractController
     public function index(MemberRepository $memberRepository): Response
     {
         return $this->render('admin/member/index.html.twig', [
-            'members' => $memberRepository->findAll(),
+            'members' => $memberRepository->findAllOrderedByName(),
         ]);
     }
 

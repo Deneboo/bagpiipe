@@ -1,4 +1,5 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
     <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+    <a class="btn btn-primary ml-2" href="{{ path('user_index') }}">Retour à la liste</a>
 {{ form_end(form) }}

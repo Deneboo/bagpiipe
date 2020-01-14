@@ -20,16 +20,21 @@ class MusicienController extends AbstractController
         $memberRepository = $this->getDoctrine()->getRepository(Member::class);
 
         return $this->render('pages/members/musicien.html.twig', [
-            'members' => $memberRepository->findBy(['member_statut' => 'Musicien'])
+            'members' => $memberRepository->findMusicien()
         ]);
     }
 
+    /**
+     * @Route("/accompagnateur", name="accompagnateur")
+     * @param MemberRepository $memberRepository
+     * @return Response
+     */
     public function listAccompagnateur(MemberRepository $memberRepository)
     {
         $memberRepository = $this->getDoctrine()->getRepository(Member::class);
 
-        return $this->render('pages/members/Accompagnateur.html.twig', [
-            'members' => $memberRepository->findBy(['member_statut' => 'Accompagnateur'])
+        return $this->render('pages/members/accompagnateur.html.twig', [
+            'members' => $memberRepository->findAccompagnateur()
         ]);
     }
 }

@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block nav %}
+    {% include 'layout/nav.html.twig' %}
+{% endblock %}
+
+{% block body %}
+    <!-- EventController -->
+    <div class="container-fluid section--box">
+        <div class="row">
+
+            <div class="col-lg-3 col-md-3">
+                {% include 'layout/subnav.html.twig' %}
+            </div>
+
+            <div class="col-lg-6 col-md-10 col-sm-12 xs-12">
+                <div class="event--card p-5">
+                    <h1 class="pt-5">Journal</h1>
+                    <p class="lead">Le Normandy Highland Pipe Band a pris part à ces évènements, qu'il pleuve,
+                        qu'il neige ou qu'il vente... Et même par beau temps, nos musiciens ont fait résonner la
+                        musique écossaise au son des cornemuses écoosaises, des snare drums, des toms et de
+                        la grosse caisse.
+                    </p>
+                    <hr class="my-4">
+                    <div class="row text-center">
+                        <hr class="my-4">
+                        {% for event in events %}
+                            <div class="col-6 clearfix musicien-box">
+                                <a class="event--detail" href="{{ path('event_detail', {'id': event.id}) }}">
+                                    <h5 class="p">{{ event.eventTitle }}</h5>
+                                    <div class="pik-id--box">
+                                        <figure class="figure">
+                                            <img  class="" src="{{ vich_uploader_asset(event, 'imageFile') }}" class="figure-img img-fluid rounded" alt="...">
+                                            <figcaption class="figure-caption">
+                                                {% if not event.adresses.empty %}
+                                                    {% for Adress in event.adresses %}
+                                                        {{ Adress.city.CityName }}
+                                                    {% endfor %}
+                                                {% endif %}, le
+                                                {{ event.eventDateStart ? event.eventDateStart|date('d/m/Y') : '' }}.
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <hr class="my-4">
+
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="gallery">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include 'layout/footer.html.twig' %}
+{% endblock %}

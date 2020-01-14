@@ -20,9 +20,10 @@ security:
                     - App\Security\LoginFormAuthenticator
             logout:
                 path: app_logout
+                invalidate_session: true
                 # where to redirect after logout
                 target: home
-
+            access_denied_handler: App\Security\AccessDeniedHandler
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
 

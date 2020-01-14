@@ -14,14 +14,26 @@ use Symfony\Component\Routing\Annotation\Route;
 class EventController extends AbstractController
 {
     /**
-     * @Route("/pages/actu/", name="list_news", methods={"GET"})
+     * @Route("/pages/journal/", name="list_diary", methods={"GET"})
      * @param EventRepository $eventRepository
      * @return Response
      */
-    public function listNews(EventRepository $eventRepository)
+    public function listDiary(EventRepository $eventRepository)
+    {
+        return $this->render('pages/event/diary.html.twig', [
+            'events' => $eventRepository->findPastEvent()
+        ]);
+    }
+
+    /**
+     * @Route("/pages/actu/", name="list_actu", methods={"GET"})
+     * @param EventRepository $eventRepository
+     * @return Response
+     */
+    public function listActu(EventRepository $eventRepository)
     {
         return $this->render('pages/event/news.html.twig', [
-            'events' => $eventRepository->findAll()
+            'events' => $eventRepository->findActu()
         ]);
     }
 

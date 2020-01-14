@@ -19,6 +19,21 @@ class EventRepository extends ServiceEntityRepository
         parent::__construct($registry, Event::class);
     }
 
+    public function findPastEvent() {
+        return $this->createQueryBuilder('e')
+            ->andWhere('e.event_date_start < CURRENT_TIMESTAMP()')
+            ->orderBy('e.event_date_start', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function findActu() {
+        return $this->createQueryBuilder('e')
+            ->andWhere('e.event_date_start >= CURRENT_TIMESTAMP()')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Event[] Returns an array of Event objects
     //  */

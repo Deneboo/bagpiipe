@@ -44,6 +44,10 @@
 
 }
 
+.dropdown-item:hover {
+   background-color: lighten($colorGraySergent, 10%);
+}
+
 .dropdown-menu--subnav {
    background-color: $colorGraySergent;
    border-radius: 0;

@@ -19,6 +19,31 @@ class MemberRepository extends ServiceEntityRepository
         parent::__construct($registry, Member::class);
     }
 
+    public function findAllOrderedByName() {
+        return $this->getEntityManager()
+        ->createQuery(
+            'SELECT m FROM App:Member m
+            ORDER BY m.member_name ASC'
+        )
+        ->getResult();
+    }
+
+    public function findMusicien() {
+        return $this->createQueryBuilder('m')
+            ->andWhere('m.member_statut = :statut')
+            ->setParameter('statut', 'Musicien')
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function findAccompagnateur() {
+        return $this->createQueryBuilder('m')
+            ->andWhere('m.member_statut = :statut')
+            ->setParameter('statut', 'Accompagnateur')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Member[] Returns an array of Member objects
     //  */

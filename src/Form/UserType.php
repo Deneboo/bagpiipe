@@ -30,20 +30,14 @@ class UserType extends AbstractType
                         'Elève' => 'ROLE_STUDENT',
                         'Prof' => 'ROLE_TEACHER',
                         'Gratte-papier' => 'ROLE_WRITER',
-                        // 'Boss' => 'ROLE_ADMIN',
+                        'Boss' => 'ROLE_ADMIN',
                         // 'God' => 'ROLE_SUPER_ADMIN',
                     ],
                 ],
             ])
+            /* A ajouter si on veut relier le membre à un compte utilisateur
             ->add('member', MemberType::class, [
                 'label' => 'Membre :'
-            ])
-            /* Erreur get collectionType !!!
-            ->add('member', EntityType::class, [
-                'label' => "Membre :",
-                'class' => Member::class,
-                'choice_label' => 'member_name',
-                'multiple' => 'false',
             ])
             */
             // ->add('password')

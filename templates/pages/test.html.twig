@@ -6,40 +6,40 @@
 
 {% block body %}
 <div class="container-fluid section--box">
-        <div class="row">
+    <div class="row">
 
-            <div class="col-lg-3 col-md-3">
-                {% include 'layout/subnav.html.twig' %}
+        <div class="col-lg-3 col-md-3">
+            {% include 'layout/subnav.html.twig' %}
+        </div>
+
+        <div class="col-lg-6 col-md-10 col-sm-12 xs-12">
+            <div class="event--card p-5">
+                <h1 class="pt-5 card-title">Le NHPB</h1>
+                <h3 class="pt-3 pb-2">Qui sommes nous ?</h3>
+                <p>
+                </p>
+                <a href="mailto:pipebandnhpb@gmail.com">
+                    <p>Contact</p>
+                </a>
             </div>
+        </div>
 
-            <div class="col-lg-6 col-md-10 col-sm-12 xs-12">
-                <div class="event--card p-5">
-                    <h1 class="pt-5 card-title">Le NHPB</h1>
-                    <h3 class="pt-3 pb-2">Qui sommes nous ?</h3>
-                    <p>
-                    </p>
-                    <a href="mailto:pipebandnhpb@gmail.com">
-                        <p>Contact</p>
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-lg-3">
-                <div class="gallery">
-                    <h6>Le groupe</h6>
-                    <div class="pik-box">
-                        <div class="pik">
-                            <figure class="figure">
-                                <img src="build/pik/bp/nhpb-caricature-2.jpg" class="figure-img img-fluid rounded" alt="...">
-                                <figcaption class="figure-caption fg">Caricature du NHPB par Claude Quillien</figcaption>
-                            </figure>
-                        </div>
+        <div class="col-lg-3">
+            <div class="gallery">
+                <h6>Le groupe</h6>
+                <div class="pik-box">
+                    <div class="pik">
+                        <figure class="figure">
+                            <img src="build/pik/bp/nhpb-caricature-2.jpg" class="figure-img img-fluid rounded" alt="...">
+                            <figcaption class="figure-caption fg">Caricature du NHPB par Claude Quillien</figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
-
         </div>
+
     </div>
+</div>
 {% endblock %}
 
 {% block footer %}

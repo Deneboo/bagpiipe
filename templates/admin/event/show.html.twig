@@ -52,6 +52,7 @@
                         <a class="btn btn-warning" href="{{ path('event_edit', {'id': event.id}) }}">Modifier</a>
                         {{ include('admin/event/_delete_form.html.twig') }}
                         {% endif %}
+                        <a class="btn btn-warning ml-2" href="{{ path('event_write', {'id': event.id}) }}">Ecrire un article</a>
                     </div>
                 </div>
             </div>

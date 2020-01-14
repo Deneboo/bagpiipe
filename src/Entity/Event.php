@@ -75,6 +75,26 @@ class Event
      */
     private $updated_at;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $event_link;
+
+    /**
+     * @ORM\Column(type="string", length=100, nullable=true)
+     */
+    private $event_link_title;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $event_newspaper_article_link;
+
+    /**
+     * @ORM\Column(type="string", length=100, nullable=true)
+     */
+    private $event_newspaper_article;
+
     public function __construct()
     {
         $this->adresses = new ArrayCollection();
@@ -231,6 +251,54 @@ class Event
     public function setUpdatedAt(\DateTimeInterface $updated_at): self
     {
         $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+    public function getEventLink(): ?string
+    {
+        return $this->event_link;
+    }
+
+    public function setEventLink(?string $event_link): self
+    {
+        $this->event_link = $event_link;
+
+        return $this;
+    }
+
+    public function getEventLinkTitle(): ?string
+    {
+        return $this->event_link_title;
+    }
+
+    public function setEventLinkTitle(?string $event_link_title): self
+    {
+        $this->event_link_title = $event_link_title;
+
+        return $this;
+    }
+
+    public function getEventNewspaperArticleLink(): ?string
+    {
+        return $this->event_newspaper_article_link;
+    }
+
+    public function setEventNewspaperArticleLink(?string $event_newspaper_article_link): self
+    {
+        $this->event_newspaper_article_link = $event_newspaper_article_link;
+
+        return $this;
+    }
+
+    public function getEventNewspaperArticle(): ?string
+    {
+        return $this->event_newspaper_article;
+    }
+
+    public function setEventNewspaperArticle(?string $event_newspaper_article): self
+    {
+        $this->event_newspaper_article = $event_newspaper_article;
 
         return $this;
     }

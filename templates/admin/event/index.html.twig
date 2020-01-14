@@ -20,7 +20,9 @@
                                 <h1 class="pt-5">Liste des évènements</h1>
                             </div>
                             <div class="col-6">
+                                {% if is_granted('ROLE_ADMIN') %}
                                 <a class="btn btn-primary mt-5" href="{{ path('event_new') }}">Créer un nouvel évènement</a>
+                                {% endif %}
                             </div>
                         </div>
                         <table class="table">

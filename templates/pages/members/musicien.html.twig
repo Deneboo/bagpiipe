@@ -22,13 +22,11 @@
                 <div class="row text-center">
                     {% for member in members %}
                     <div class="col-4 clearfix musicien-box">
-                        {% if member.memberStatut == 'Musicien' %}
-                            <h5 class="p">{{ member.memberSurname }} {{ member.memberName }}</h5>
-                            <div class="pik-id--box">
-                                <img class="pik-id" src="{{ vich_uploader_asset(member, 'imageFile') }}" style="">
-                            </div>
-                            <p class="pik-id--p mb-5">{{ member.memberInformation }}</p>
-                        {% endif %}
+                        <h6 class="p">{{ member.memberSurname }} {{ member.memberName }}</h6>
+                        <div class="pik-id--box">
+                            <img class="pik-id" src="{{ vich_uploader_asset(member, 'imageFile') }}" style="">
+                        </div>
+                        <p class="pik-id--p mb-5">{{ member.memberInformation }}</p>
                     </div>
                     {% endfor %}
                 </div>

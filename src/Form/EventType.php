@@ -29,10 +29,20 @@ class EventType extends AbstractType
                 'label' => 'Image :',
                 'required' => false
             ])
-            ->add('event_description', TextareaType::class,
-                ['row_attr' => ['class' => 'tinymce', 'id' => '...',],
+            ->add('event_description', TextareaType::class, [
+                'row_attr' => ['class' => 'tinymce',
+                    'id' => '...',
+                    ],
                 'label' => 'Description :',
                 ])
+            ->add('event_link', TextareaType::class, [
+                'label' => 'Lien :',
+                'required' => false
+            ])
+            ->add('event_link_title', null, [
+                'label' => 'Titre du lien :',
+                'required' => false
+            ])
             ->add('event_date_start', DateType::class, [
                 'label' => 'Date de début :',
                 'placeholder' => [
@@ -48,10 +58,19 @@ class EventType extends AbstractType
                 'format' => 'dd-MM-yyyy',
                 'required' => false
             ])
-            ->add('event_story', null,[
+            ->add('event_story', TextareaType::class, [
                 'label' => 'Article :',
                 'help' => 'Pas de limites de mots, fais toi plaisir !',
-                ])
+                'required' => false
+            ])
+            ->add('event_newspaper_article_link', TextareaType::class, [
+                'label' => 'Lien sur le compte rendu internet :',
+                'required' => false
+            ])
+            ->add('event_newspaper_article', null, [
+                'label' => 'Titre du compte rendu internet :',
+                'required' => false
+            ])
             // Test imbrication de form
             ->add('adresses', CollectionType::class, [
                 'entry_type' => AdressType::class,

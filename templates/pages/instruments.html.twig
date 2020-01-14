@@ -5,81 +5,123 @@
 {% endblock %}
 
 {% block body %}
+<!--
+<img src="{{ asset('build/pik/bp/armada-rouen-2019-nhpb-cornemuserouen.jpg') }}" class="background--page" alt="...">
+-->
 
-    <!--
-    <img src="{{ asset('build/pik/bp/armada-rouen-2019-nhpb-cornemuserouen.jpg') }}" class="background--page" alt="...">
-    -->
+<div class="container-fluid section--box">
+    <div class="row">
 
-    <div class="container-fluid section--box">
-        <div class="row">
+        <div class="col-lg-3 col-md-3">
+            {% include 'layout/subnav.html.twig' %}
+        </div>
 
-            <div class="col-lg-3 col-md-3">
-                <div class="col-lg-3 col-md-3">
-                    {% include 'layout/subnav.html.twig' %}
+        <div class="col-lg-6 col-md-10 col-sm-12 xs-12">
+            <div class="event--card p-5">
+                <h1 class="pt-5 card-title">Les instruments du pipe band</h1>
+                <p class="lead">Le Normandy Highland Pipe Band a pris part à ces évènements, qu'il pleuve,
+                    qu'il neige ou qu'il vente... Et même par beau temps, nos musiciens ont fait résonner la
+                    musique écossaise au son des cornemuses écoosaises, des snare drums, des toms et de
+                    la grosse caisse.
+                </p>
+                <hr class="my-4">
+                <div class="event-container">
+                <h3 class="event-title">La grand cornemuse écossaise</h3>
+                <div class="article-pik">
+                    <img src="/build/pik/school/cornemuse-bagpipe-nhpb.jpg"
+                         alt="piper full dress uniforme black watch">
                 </div>
-            </div>
-
-            <div class="col-lg-6 col-md-10 col-sm-12 xs-12">
-                <div class="event--card p-5">
-                    <h1 class="pt-5 card-title">Les instruments</h1>
-                    <div class="event-container">
-                        <h3 class="event-title">La cornemuse</h3>
-                        <p>
-                            La grande cornemuse écossaise est un instrument bizarre initialement fabriqué à partir de la panse de
-                            brebis géante que l'on vidait au préalable. Elle émet un son assourdissant, ce qui ne permet pas au musiciens
-                            de jouer à la maison sous peine de dispute, divorce, voire décès prématuré. Heureusement un écossais astucieux a
-                            inventé le practice de cornemuse, qui a permi de démocratiser la pratique de cet instrument.
-                        </p>
-                    </div>
-                    <div class="event-container">
-                        <h3 class="event-title">Le snare drum</h3>
-                        <p>
-                            Le snare Drum est un petit tambour au son sec. Il accompagne agréablement les cornemuses et permet aux joueurs
-                            de marcher en rythme..
-                        </p>
-                    </div>
-                    <div class="event-container">
-                        <h3 class="event-title">Le Tom</h3>
-                        <p>
-                            Le Tom est un tambour qui se joue avec de jolies mailloches à moumoute. Les joueurs de tom effectuent des
-                            figures compliquées de tourné-boulé de la mailloche pour en fin de figure asséner un coup sur la peau de l'instrument.
-                            La difficulté est de ne pas se la mettre dans l'oeil.
-                        </p>
-                    </div>
-                    <div class="event-container">
-                        <h3 class="event-title">La grosse Caisse</h3>
-                        <p>
-                            La grosse caisse est un méga tambour que l'on porte sur le ventre. En général, il n'y a qu'un seul joueur de grosse caisse
-                            par défilé. C'est celui qui entend le mieux, car en fait il ne voit pas ou il va et est obligé de se diriger au son des cornemuses
-                            et des drums.
-                        </p>
-                    </div>
-                    <div class="event-container">
-                        <h3 class="event-title">Le gros baton</h3>
-                        <p>
-                            Le gros baton, n'émet aucun son. Il sert au drum major pour initier le rythme du band. Celui-ci défile en tête du cortège et si il
-                            se plante, le reste du groupe aussi.
-                        </p>
-                    </div>
+                <p>
+                    La grande cornemuse écossaise est un instrument bizarre initialement fabriqué à partir de la panse de
+                    brebis géante que l'on vidait au préalable. Elle émet un son assourdissant, ce qui ne permet pas au musiciens
+                    de jouer à la maison sous peine de dispute, divorce, voire décès prématuré. Heureusement un écossais astucieux a
+                    inventé le practice de cornemuse, qui a permi de démocratiser la pratique de cet instrument.
+                </p>
                 </div>
+                <div class="event-container">
+                    <h3 class="event-title">Le snare drum</h3>
+                    <div class="article-pik">
+                        <img src="/build/pik/school/nhpb-instrument-pipeband-snaredrum-cornemuserouen.jpg"
+                             alt="snare drum tambour pipe band NHPB">
+                    </div>
+                    <p>
+                        Le snare Drum est un petit tambour au son sec. Il accompagne agréablement les cornemuses et permet aux joueurs
+                        de marcher en rythme..
+                    </p>
+                </div>
+                <div class="event-container">
+                    <h3 class="event-title">Le Tom</h3>
+                    <div class="article-pik">
+                        <img src="/build/pik/school/nhpb-instrument-pipeband-tom-cornemuserouen.jpg"
+                             alt="percussion tom pipe band">
+                    </div>
+                    <p>
+                        Le Tom est un tambour qui se joue avec de jolies mailloches à moumoute. Les joueurs de tom effectuent des
+                        figures compliquées de tourné-boulé de la mailloche pour en fin de figure asséner un coup sur la peau de l'instrument.
+                        La difficulté est de ne pas se la mettre dans l'oeil.
+                    </p>
+                </div>
+                <div class="event-container">
+                    <h3 class="event-title">La grosse Caisse</h3>
+                    <div class="article-pik">
+                        <img src="/build/pik/school/nhpb-grossecaisse-pipeband-cornemuserouen.jpg"
+                             alt="grosse caisse pipe band">
+                    </div>
+                    <p>
+                        La grosse caisse est un méga tambour que l'on porte sur le ventre. En général, il n'y a qu'un seul joueur de grosse caisse
+                        par défilé. C'est celui qui entend le mieux, car en fait il ne voit pas ou il va et est obligé de se diriger au son des cornemuses
+                        et des drums.
+                    </p>
+                </div>
+                <div class="event-container">
+                    <h3 class="event-title">Le gros baton</h3>
+                    <div class="article-pik">
+                        <img src="/build/pik/school/nhpb-gros-baton.jpg"
+                             alt="grosse baton pipe band">
+                    </div>
+                    <p>
+                        Le gros baton, n'émet aucun son. Il sert au drum major pour initier le rythme du band. Celui-ci défile en tête du cortège et si il
+                        se plante, le reste du groupe aussi.
+                    </p>
+                </div>
+                <hr class="my-4">
             </div>
+        </div>
 
-            <div class="col-lg-3">
-                <div class="gallery">
-                    <h6>Le groupe</h6>
-                    <div class="pik-box">
+        <div class="col-lg-3">
+            <div class="gallery">
+                <h6>Où acheter son matériel ?</h6>
+                <div class="pik-box">
+                    <div class="pik-box ml-5">
                         <div class="pik">
-                            <figure class="figure">
-                                <img src="build/pik/bp/nhpb-caricature-2.jpg" class="figure-img img-fluid rounded" alt="...">
-                                <figcaption class="figure-caption fg">Caricature du NHPB par Claude Quillien</figcaption>
-                            </figure>
+                            <a href="https://kiltsandmore.com/" target="_blank">
+                                <figure class="figure">
+                                    <img src="https://kiltsandmore.com/images/logo-kilts-and-more.png" class="figure-img img-fluid rounded"
+                                         alt="Logo Kilt & more" style="width: 10vw; height: auto;">
+                                    <figcaption class="figure-caption fg text-center">Kilt & more</figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pik-box">
+                    <div class="pik-box ml-5">
+                        <div class="pik">
+                            <a href="http://www.mccallumbagpipes.com/" target="_blank">
+                                <figure class="figure">
+                                    <img src="http://www.mccallumbagpipes.com/wp-content/uploads/2011/01/1294331324mccallumbagpipes_logo.png"
+                                         class="figure-img img-fluid rounded" alt="Logo Mac Callum bagpipes" style="width: 10vw; height: auto;">
+                                    <figcaption class="figure-caption fg text-center">Mc Callum Bagpipes</figcaption>
+                                </figure>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
+
     </div>
+</div>
 {% endblock %}
 
 {% block footer %}

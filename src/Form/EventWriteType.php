@@ -22,8 +22,17 @@ class EventWriteType extends AbstractType
     {
         $builder
             ->add('event_story', null,[
-                'label' => 'Article :',
+                'label' => 'Compte rendu :',
                 'help' => 'Pas de limites de mots, fais toi plaisir !',
+                'required' => false
+            ])
+            ->add('event_newspaper_article', null, [
+                'label' => 'Titre du compte rendu internet :',
+                'required' => false
+            ])
+            ->add('event_newspaper_article_link', TextareaType::class, [
+                'label' => 'Lien sur le compte rendu internet :',
+                'required' => false
             ])
         ;
     }

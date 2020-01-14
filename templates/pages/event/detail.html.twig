@@ -24,13 +24,16 @@
                         {% endfor %}
                         le {{ event.eventDateStart ? event.eventDateStart|date('d/m/Y') : '' }}.
                     </p>
-                    <img class="img-fluid" src="{{ vich_uploader_asset(event, 'imageFile') }}">
-                    <p>
-                        {{ event.eventDescription }}
-                    </p>
+                    <img class="img-fluid mb-3" src="{{ vich_uploader_asset(event, 'imageFile') }}">
                     <p class="text-justify">
-                        {{ event.eventStory }}
+                        {{ event.eventStory|nl2br }}
                     </p>
+                    <a href="{{ event.eventLink }}" target="_blank">
+                        <p>{{ event.eventLinkTitle }}</p>
+                    </a>
+                    <a href="{{ event.eventNewspaperArticleLink }}" target="_blank">
+                        <p>{{ event.eventNewspaperArticle }}</p>
+                    </a>
                 </div>
             </div>
         </div>

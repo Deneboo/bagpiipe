@@ -5,92 +5,94 @@
 {% endblock %}
 
 {% block body %}
-
     <!--
-    <img src="{{ asset('build/pik/bp/armada-rouen-2019-nhpb-cornemuserouen.jpg') }}" class="background--page" alt="...">
-    -->
+<img src="{{ asset('build/pik/bp/armada-rouen-2019-nhpb-cornemuserouen.jpg') }}" class="background--page" alt="...">
+-->
 
-    <div class="container-fluid section--box">
-        <div class="row">
+<div class="container-fluid section--box">
+    <div class="row">
 
-            <div class="col-lg-3 col-md-3">
-                <div class="col-lg-3 col-md-3">
-                    {% include 'layout/subnav.html.twig' %}
-                </div>
-            </div>
+        <div class="col-lg-3 col-md-3">
+            {% include 'layout/subnav.html.twig' %}
+        </div>
 
 
-            <div class="col-lg-6 col-md-10 col-sm-12 xs-12">
-                <div class="event--card p-5">
-                    <h1 class="">L'uniforme</h1>
-                    <p>En fonction de l'évenement, nos musiciens revêtent différentes tenues.
-                        LE NHPB dispose de trois tenues officielles : La Full Dress, la tenue millitaire et la tenue civile
+        <div class="col-lg-6 col-md-10 col-sm-12 xs-12">
+            <div class="event--card p-5">
+                <h1 class="pt-5">L'uniforme</h1>
+                <h3 class="pt-3 pb-2">Kilts and more...</h3>
+                <p>En fonction de l'évenement, nos musiciens revêtent différentes tenues.
+                    LE NHPB dispose de trois tenues officielles : La Full Dress, la tenue millitaire et la tenue civile
+                </p>
+                <p>
+                    Les Pipers et les Drummers ont des kilts de couleurs différentes : Tartan Black Watch pour les
+                    percussionistes et Royal Stewart pour les Sonneurs.
+                </p>
+                <hr class="my-4">
+                <div class="event-container">
+                    <h3 class="event-title">La full dress</h3>
+                    <div class="article-pik">
+                        <img src="/build/pik/uniform/black-watch-fulldress-nhpb-cornemuserouen.jpg"
+                             alt="piper full dress uniforme black watch">
+                    </div>
+
+                    <p>
+                        En fonction du pupitre d'appartenance du musicien, la composition de la full dress sera différente.
                     </p>
                     <p>
-                        Les Pipers et les Drummers ont des kilts de couleurs différentes : Tartan Black Watch pour les
-                        percussionistes et Royal Stewart pour les Sonneurs.
+                        Pour un joueur de cornemuse, on a un Kilt, un pourpoint, une cape de sonneur,
+                        un sporran à longs crins, une ceinture pour sporran, une ceinture en cuir portée en écharpe (comme une
+                        Miss), une ceinture à la taille avec une grosse boucle en métal, des chaussettes, des guêtres,
+                        des godillots et un couvre chef.
                     </p>
-
-                    <div class="event-container">
-                        <h3 class="event-title">La full dress</h3>
-                        <div class="article-pik">
-                            <img src="/build/pik/uniform/black-watch-fulldress-nhpb-cornemuserouen.jpg"
-                                 alt="piper full dress uniforme black watch">
-                        </div>
-
-                        <p>
-                            En fonction du pupitre d'appartenance du musicien, la composition de la full dress sera différente.
-                        </p>
-                        <p>
-                            Pour un joueur de cornemuse, on a un Kilt, un pourpoint, une cape de sonneur,
-                            un sporran à longs crins, une ceinture pour sporran, une ceinture en cuir portée en écharpe (comme une
-                            Miss), une ceinture à la taille avec une grosse boucle en métal, des chaussettes, des guêtres,
-                            des godillots et un couvre chef.
-                        </p>
-                        <p>
-                            Un percussionniste va avoir le même uniforme sans la cape, qui gênerait son harnachement.
-                        </p>
-                    </div>
-                    <div class="event-container">
-                        <h3 class="event-title">La tenue militaire</h3>
-                        <div class="article-pik">
-                            <img src="/build/pik/uniform/black-watch-tenue-militaire-1-nhpb-cornemuserouen.jpg"
-                                 alt="pipe band nhpb en tenue militaire">
-                        </div>
-                    </div>
-                    <div class="event-container">
-                        <h3 class="event-title">La tenue civile</h3>
-                        <div class="article-pik">
-                            <img src="/build/pik/uniform/black-watch-tenue-civile-nhpb-cornemuserouen.jpg"
-                                 alt="pipe band nhpb en tenue civile">
-                        </div>
-                    </div>
-                    <div class="event-container">
-                        <h3 class="event-title">La tenue spéciale météo normande</h3>
-                        <div class="article-pik">
-                            <img src="/build/pik/uniform/black-watch-raincape-nhpb-cornemuserouen.jpg"
-                                 alt="pipe band pluie rain cape">
-                        </div>
+                    <p>
+                        Un percussionniste va avoir le même uniforme sans la cape, qui gênerait son harnachement.
+                    </p>
+                </div>
+                <div class="event-container">
+                    <h3 class="event-title">La tenue militaire</h3>
+                    <div class="article-pik">
+                        <img src="/build/pik/uniform/black-watch-tenue-militaire-1-nhpb-cornemuserouen.jpg"
+                             alt="pipe band nhpb en tenue militaire">
                     </div>
                 </div>
-            </div>
-
-            <div class="col-lg-3">
-                <div class="gallery">
-                    <h6>Le groupe</h6>
-                    <div class="pik-box">
-                        <div class="pik">
-                            <figure class="figure">
-                                <img src="build/pik/bp/nhpb-caricature-2.jpg" class="figure-img img-fluid rounded" alt="...">
-                                <figcaption class="figure-caption fg">Caricature du NHPB par Claude Quillien</figcaption>
-                            </figure>
-                        </div>
+                <div class="event-container">
+                    <h3 class="event-title">La tenue civile</h3>
+                    <div class="article-pik">
+                        <img src="/build/pik/uniform/black-watch-tenue-civile-nhpb-cornemuserouen.jpg"
+                             alt="pipe band nhpb en tenue civile">
                     </div>
                 </div>
+                <div class="event-container">
+                    <h3 class="event-title">La tenue spéciale météo normande</h3>
+                    <div class="article-pik">
+                        <img src="/build/pik/uniform/black-watch-raincape-nhpb-cornemuserouen.jpg"
+                             alt="pipe band pluie rain cape">
+                    </div>
+                </div>
+                <hr class="my-4">
             </div>
-
         </div>
+
+        <div class="col-lg-3">
+            <div class="gallery">
+                <h6>Nos fournisseurs :</h6>
+                <div class="pik-box ml-5">
+                    <div class="pik">
+                        <a href="https://kiltsandmore.com/" target="_blank">
+                        <figure class="figure">
+                            <img src="https://kiltsandmore.com/images/logo-kilts-and-more.png" class="figure-img img-fluid rounded"
+                                 style="width: 10vw; height: auto;" alt="Logo Kilt & More">
+                            <figcaption class="figure-caption fg text-center">Kilt & more</figcaption>
+                        </figure>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+</div>
 {% endblock %}
 
 {% block footer %}
